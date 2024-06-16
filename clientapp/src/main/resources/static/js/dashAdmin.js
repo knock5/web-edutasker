@@ -326,7 +326,6 @@ $("#create-role").click((event) => {
       name: valueName,
     }),
     success: () => {
-      $("#createRoleModal").modal("hide");
       $("#tableRole").DataTable().ajax.reload();
       Swal.fire({
         position: "center",
@@ -335,6 +334,8 @@ $("#create-role").click((event) => {
         showConfirmButton: false,
         timer: 2000,
       });
+
+      $("#createRole").modal("hide");
       $("#role-name").val("");
     },
     error: (err) => {

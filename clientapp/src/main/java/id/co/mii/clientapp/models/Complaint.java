@@ -16,7 +16,6 @@ public class Complaint {
   private String body;
   private String attachment;
   private Date date;
-  private Category category;
   private People people;
   private Status status;
   private List<FollowUp> followUps;

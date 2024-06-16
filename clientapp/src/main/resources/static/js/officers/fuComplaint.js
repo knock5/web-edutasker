@@ -46,7 +46,6 @@ $("#createFollowUp").click(function (event) {
   const complaintId = $("#fuComplaintId").val();
   const officerId = $("#fuOfficerId").val();
   const statusId = $("#fuStatusId").val();
-  console.log(officerId);
 
   $.ajax({
     url: "api/followUp",
@@ -73,6 +72,7 @@ $("#createFollowUp").click(function (event) {
       $("#fuNotes").val("");
       $("#fuComplaintId").val("");
       $("#fuOfficerId").val("");
+      $("#fuScore").val("");
       $("#fuStatusId").val("");
     },
     error: () => {

@@ -14,7 +14,7 @@
           class="d-flex justify-content-between align-items-center flex-wrap gap-3"
         >
           <a th:href="@{/o-dashboard}" class="btn btn-warning">Kembali</a>
-          <h1>Data Pengaduan</h1>
+          <h1>List Tugas Mahasiswa</h1>
           <a th:href="@{/fu-complaint}" class="btn btn-success"
             ><i class="bi bi-send-check"></i> Buat Tanggapan</a
           >
@@ -33,7 +33,6 @@
               <th class="col-1 text-center">Tanggal</th>
               <th class="col-1 text-center">Judul Pengaduan</th>
               <th class="col-4 text-center">Isi Pengaduan</th>
-              <th class="col-1 text-center">Kategori</th>
               <th class="col-1 text-center">Status</th>
               <th class="col-2 text-center">Aksi</th>
             </tr>
@@ -94,16 +93,8 @@
                       </td>
                     </tr>
                     <tr>
-                      <th class="col-4 table-info">Kategori</th>
-                      <td class="col-8" id="complaintCategoryDetail"></td>
-                    </tr>
-                    <tr>
                       <th class="col-4 table-success">Nama Pengirim</th>
                       <td class="col-8" id="namePeopleDetail"></td>
-                    </tr>
-                    <tr>
-                      <th class="col-4 table-success">NIK</th>
-                      <td class="col-8" id="nikPeopleDetail"></td>
                     </tr>
                     <tr>
                       <th class="col-4 table-success">Email</th>
@@ -112,14 +103,6 @@
                     <tr>
                       <th class="col-4 table-success">Telepon</th>
                       <td class="col-8" id="phonePeopleDetail"></td>
-                    </tr>
-                    <tr>
-                      <th class="col-4 table-success">Alamat Pengirim</th>
-                      <td class="col-8" id="addressPeopleDetail"></td>
-                    </tr>
-                    <tr>
-                      <th class="col-4 table-success">Pekerjaan</th>
-                      <td class="col-8" id="jobPeopleDetail"></td>
                     </tr>
                   </tbody>
                 </table>

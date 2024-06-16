@@ -48,7 +48,6 @@ let getDataPeople = () => {
       },
       { data: "name", className: "text-center" },
       { data: "email", className: "text-center" },
-      { data: "job", className: "text-center" },
       { data: "address", className: "text-center" },
       {
         data: "user.roles",
@@ -169,11 +168,9 @@ let detailPeople = (id) => {
     method: "GET",
     success: (data) => {
       $("#userIdDetail").text(data.id);
-      $("#userNikDetail").text(data.nik);
       $("#userNameDetail").text(data.name);
       $("#userEmailDetail").text(data.email);
       $("#userPhoneDetail").text(data.phone);
-      $("#userJobDetail").text(data.job);
       $("#userAddressDetail").text(data.address);
       $("#usernameAccDetail").text(data.user.username);
       $("#userRoleDetail").text(data.user.roles[0].name);
@@ -199,11 +196,9 @@ let updatePeople = (id) => {
     contentType: "application/json",
     success: (data) => {
       $("#editId").val(data.id);
-      $("#editNik").val(data.nik);
       $("#editName").val(data.name);
       $("#editEmail").val(data.email);
       $("#editPhone").val(data.phone);
-      $("#editJob").val(data.job);
       $("#editAddress").val(data.address);
       $("#editProfilePicture").val(data.profile_picture);
     },
@@ -222,11 +217,9 @@ $("#update-people").click((event) => {
   event.preventDefault();
 
   let valUpdateId = $("#editId").val();
-  let valUpdateNIK = $("#editNik").val();
   let valUpdateName = $("#editName").val();
   let valUpdateEmail = $("#editEmail").val();
   let valUpdatePhone = $("#editPhone").val();
-  let valUpdateJob = $("#editJob").val();
   let valUpdateAddress = $("#editAddress").val();
   let valUpdatePP = $("#editProfilePicture").val();
 
@@ -237,11 +230,9 @@ $("#update-people").click((event) => {
     contentType: "application/json",
     beforeSend: addCSRFToken(),
     data: JSON.stringify({
-      nik: valUpdateNIK,
       name: valUpdateName,
       email: valUpdateEmail,
       phone: valUpdatePhone,
-      job: valUpdateJob,
       address: valUpdateAddress,
       profile_picture: valUpdatePP,
     }),
@@ -255,11 +246,9 @@ $("#update-people").click((event) => {
       });
 
       $("#editId").val("");
-      $("#editNik").val("");
       $("#editName").val("");
       $("#editEmail").val("");
       $("#editPhone").val("");
-      $("#editJob").val("");
       $("#editAddress").val("");
       $("#editProfilePicture").val("");
 

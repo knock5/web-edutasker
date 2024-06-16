@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>navbar</title>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-md px-3 py-3 sticky-top"
+      id="headnav"
+      th:fragment="navbar"
+    >
+      <div class="container-fluid">
+        <div class="navbar-brand text-white">
+          <img th:src="@{/img/logo.jpg}" alt="logo" class="logo" />
+        </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                th:classappend="${isActive == 'home' ? 'active' : ''}"
+                aria-current="page"
+                th:href="@{/home}"
+                >Beranda</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                th:classappend="${isActive == 'a-dashboard' ? 'active' : ''}"
+                th:href="@{/a-dashboard}"
+                sec:authorize="hasRole('ADMIN')"
+                >Dashboard</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                th:classappend="${isActive == 'u-dashboard' ? 'active' : ''}"
+                th:href="@{/u-dashboard}"
+                sec:authorize="hasRole('USER')"
+                >Dashboard</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                th:classappend="${isActive == 'o-dashboard' ? 'active' : ''}"
+                th:href="@{/o-dashboard}"
+                sec:authorize="hasRole('OFFICER')"
+                >Dashboard</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                th:classappend="${isActive == 'h-kategori' ? 'active' : ''}"
+                th:href="@{/h-kategori}"
+                >Kategori Pengaduan</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                th:classappend="${isActive == 'h-tentang' ? 'active' : ''}"
+                th:href="@{/h-tentang}"
+                >Tentang Kami</a
+              >
+            </li>
+          </ul>
+          <div class="wrap-acc">
+            <div class="dropdown">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <span class="name" th:text="${username}"></span>
+              </button>
+              <ul
+                class="dropdown-menu dropdown-menu-md-end"
+                aria-labelledby="dropdownMenuButton1"
+              >
+                <li>
+                  <button
+                    class="dropdown-item"
+                    data-bs-toggle="modal"
+                    data-bs-target="#profileModal"
+                    type="button"
+                    onclick="getUserProfile()"
+                  >
+                    Profile <i class="bi bi-person"></i>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    data-bs-toggle="modal"
+                    data-bs-target="#logoutModal"
+                    type="button"
+                  >
+                    Keluar <i class="bi bi-box-arrow-right"></i>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{layouts/main.html}"
+>
+  <head>
+    <title th:text="${title}"></title>
+  </head>
+  <body>
+    <!-- content -->
+    <section class="container-fluid p-3 wrapper" layout:fragment="content">
+      <div class="container">
+        <div
+          class="d-flex justify-content-between align-items-center flex-wrap gap-3"
+        >
+          <a th:href="@{/data-pengaduan}" class="btn btn-warning">Kembali</a>
+          <h1>Form Follow Up</h1>
+        </div>
+      </div>
+
+      <div class="container py-4">
+        <form>
+          <div class="form-group py-2">
+            <input
+              type="text"
+              class="form-control"
+              id="fuOfficerId"
+              name="officerId"
+              th:value="${userId}"
+              hidden
+              required
+            />
+            <label for="complaintIdtarget">ID Pengaduan</label>
+            <select
+              class="form-select"
+              aria-label="Default select example"
+              id="fuComplaintId"
+            >
+              <option
+                value=""
+                id="defaultSelectedIdTarget"
+                selected
+                hidden
+              ></option>
+            </select>
+          </div>
+          <div class="form-group py-2">
+            <label for="catatan">Catatan Follow Up</label>
+            <textarea
+              class="form-control"
+              id="fuNotes"
+              name="followUpNotes"
+              required
+            ></textarea>
+          </div>
+          <div class="form-group py-2">
+            <label for="id-status-pengaduan">ID Status Pengaduan</label>
+            <select
+              class="form-select"
+              aria-label="Default select example"
+              id="fuStatusId"
+            >
+              <option
+                value=""
+                id="defaultSelectedStatus"
+                selected
+                hidden
+              ></option>
+            </select>
+          </div>
+          <div class="py-3">
+            <button type="submit" id="createFollowUp" class="btn btn-primary">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <div layout:fragment="js">
+      <script th:src="@{/js/officers/fuComplaint.js}"></script>
+    </div>
+  </body>
+</html>

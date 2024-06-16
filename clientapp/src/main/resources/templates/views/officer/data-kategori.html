@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{layouts/main.html}"
+>
+  <head>
+    <title th:text="${title}"></title>
+  </head>
+  <body>
+    <!-- content -->
+    <section class="container-fluid p-3 wrapper" layout:fragment="content">
+      <div class="container">
+        <div
+          class="d-flex justify-content-between align-items-center flex-wrap gap-3"
+        >
+          <a th:href="@{/o-dashboard}" class="btn btn-warning">Kembali</a>
+          <h1>Data Kategori</h1>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-center align-items-center pt-3 gap-3">
+        <h3>Total Data: <span id="totalDataKategori">0</span></h3>
+        <!-- Button trigger modal create -->
+        <button
+          type="button"
+          class="btn btn-outline-success btn-sm"
+          data-bs-toggle="modal"
+          data-bs-target="#createCategoryModal"
+          title="add"
+        >
+          Tambah Kategori
+          <i class="bi bi-plus-circle"></i>
+        </button>
+      </div>
+
+      <div class="container mt-3" id="contentMenu"></div>
+
+      <!-- Modal create -->
+      <div
+        class="modal fade"
+        id="createCategoryModal"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="createModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="createModalLabel">
+                Tambah Kategori
+              </h1>
+            </div>
+            <form>
+              <div class="modal-body">
+                <div class="input-group my-2">
+                  <span class="input-group-text bg-warning">Nama Kategori</span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    aria-label="Sizing example input"
+                    aria-describedby="name"
+                    name="name"
+                    id="category-name"
+                    required
+                  />
+                </div>
+                <div class="input-group my-2">
+                  <span class="input-group-text bg-warning">Deskripsi</span>
+                  <textarea
+                    class="form-control"
+                    id="category-description"
+                    name="description"
+                    aria-label="Deskripsi Kategori"
+                    rows="7"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-outline-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Batal
+                </button>
+                <button
+                  id="create-category"
+                  type="submit"
+                  class="btn btn-success"
+                >
+                  Simpan
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Edit Kategori -->
+      <div
+        class="modal fade"
+        id="updateCategoryModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="updateModalLabel">
+                Edit Kategori
+              </h1>
+            </div>
+            <form>
+              <input type="text" id="update-id" hidden />
+              <div class="modal-body">
+                <div class="input-group my-2">
+                  <span class="input-group-text bg-warning" id="u-name"
+                    >Name</span
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    aria-label="Sizing example input"
+                    aria-describedby="u-name"
+                    id="update-name"
+                    required
+                  />
+                </div>
+                <div class="input-group my-2">
+                  <span class="input-group-text bg-warning">Deskripsi</span>
+                  <textarea
+                    class="form-control"
+                    id="update-description"
+                    aria-label="Deskripsi Kategori"
+                    rows="7"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-outline-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Kembali
+                </button>
+                <button
+                  id="update-category"
+                  type="submit"
+                  class="btn btn-success"
+                >
+                  Simpan
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal delete -->
+      <div
+        class="modal fade"
+        id="deleteCategoryModal"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1
+                class="modal-title fs-3 fw-bold m-auto"
+                id="staticBackdropLabel"
+              >
+                Informasi
+              </h1>
+            </div>
+            <form>
+              <div class="modal-body">
+                <div class="my-3 d-flex justify-content-center">
+                  <input type="text" id="delete-id" hidden />
+                  <h4 class="fs-6 fw-bold">
+                    Apakah Anda yakin ingin menghapus kategori ini?
+                  </h4>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-bs-dismiss="modal"
+                >
+                  Batal
+                </button>
+                <button
+                  type="submit"
+                  id="delete-category"
+                  class="btn btn-outline-danger fw-bold"
+                >
+                  Iya, Hapus!
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div layout:fragment="js">
+      <script th:src="@{/js/officers/dataKategori.js}"></script>
+    </div>
+  </body>
+</html>

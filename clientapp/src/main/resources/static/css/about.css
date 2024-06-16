@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --black: #45474b;
+  --prim: #495e57;
+  --second: #f4ce14;
+  --white: #f5f7f8;
+  --green: #379237;
+  --red: #e21818;
+}
+
+/* About Section */
+.about-img {
+  width: 300px;
+}
+/* Team Section */
+.card1 {
+  background-color: var(--white);
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 18rem;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+}

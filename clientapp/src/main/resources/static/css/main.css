@@ -1,0 +1,299 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --black: #45474b;
+  --prim: #495e57;
+  --second: #f4ce14;
+  --white: #f5f7f8;
+  --green: #379237;
+  --red: #e21818;
+}
+
+/* color label status */
+.Selesai,
+.selesai {
+  background-color: var(--green);
+}
+.Diterima,
+.diterima {
+  background-color: #17a2b8;
+  color: #fff;
+}
+.Diproses,
+.diproses {
+  background-color: #ffc107;
+  color: #333;
+}
+.Ditolak,
+.ditolak {
+  background-color: #dc3545;
+  color: #fff;
+}
+.Terkirim,
+.terkirim {
+  background-color: #007bff;
+  color: #fff;
+}
+.Menunggu,
+.menunggu {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.hiding {
+  display: none;
+}
+
+.wrap-body {
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(180deg, var(--white) 25%, var(--second) 150%);
+  color: var(--black);
+  min-height: 100vh;
+  padding-bottom: 430px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* navbar */
+.logo {
+  width: 50px;
+}
+.navbar-brand {
+  border-radius: 15px;
+  overflow: hidden;
+}
+.navbar {
+  background-color: var(--black);
+}
+.nav-item {
+  margin: 0 5px;
+  text-align: center;
+}
+.wrap-acc {
+  display: flex;
+  justify-content: center;
+}
+.active {
+  border-radius: 5px !important;
+  border-bottom: 1px solid var(--second) !important;
+}
+.nav-link:hover {
+  border-radius: 5px;
+  border-bottom: 1px solid var(--second) !important;
+}
+.nav-link {
+  color: var(--white) !important;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+/* profile */
+.rounded-profile-image {
+  max-width: 20%;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+}
+.form-group {
+  margin: 5px 0 !important;
+}
+
+/* dashboard admin */
+.menu-dash {
+  background-color: var(--black);
+  border-radius: 5px;
+}
+.dash-link {
+  text-decoration: none;
+  color: var(--white);
+}
+.dash-link:hover {
+  color: var(--second);
+}
+.dataTables_wrapper input {
+  width: 300px;
+  margin-bottom: 20px;
+}
+.dataTables_wrapper input[type="search"] {
+  background-color: var(--white);
+}
+.dataTables_wrapper input[type="search"]:focus {
+  background-color: var(--black);
+  color: var(--second);
+}
+/* @media screen and (min-width: 1400px) {
+  .dataTables_scrollHead {
+    margin-left: 51px !important;
+  }
+} */
+
+/* dashboard officer */
+.id-kategori {
+  background-color: var(--second);
+  color: var(--black);
+}
+.title-card {
+  font-size: 1.5rem;
+}
+
+/* category */
+.wrap-category {
+  padding: 15px 0;
+}
+.accordion-button {
+  background-color: var(--second) !important;
+}
+
+/* footer */
+.footBar {
+  background-color: var(--black);
+  color: var(--white);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.footer-link,
+.footer-tag {
+  color: var(--second);
+}
+
+/* custom card dashboard officer */
+.link-modal {
+  text-decoration: none;
+}
+.wrap-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.wrap-card > a {
+  text-decoration: none;
+}
+.menu-card {
+  width: 200px;
+  height: 270px;
+  border-radius: 20px;
+  background: var(--white);
+  position: relative;
+  padding: 1.2rem;
+  border: 2px solid var(--prim);
+  transition: 0.5s ease-out;
+  overflow: visible;
+}
+.card-details {
+  color: var(--black);
+  height: 100%;
+  gap: 0.5em;
+  display: grid;
+  place-content: center;
+}
+.card-button {
+  transform: translate(-50%, 125%);
+  width: 60%;
+  border-radius: 1rem;
+  border: none;
+  background-color: var(--second);
+  color: var(--prim);
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  opacity: 0;
+  transition: 0.3s ease-out;
+}
+/*Text*/
+.text-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 20px;
+}
+/*Hover*/
+.menu-card:hover {
+  border-color: var(--second);
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+.menu-card:hover .card-button {
+  transform: translate(-50%, 50%);
+  opacity: 1;
+}
+
+.rounded-profile-image {
+  max-width: 100%;
+  max-height: 200px;
+  width: 150px;
+  height: 150px;
+}
+
+/* dashboard user */
+.kartu {
+  width: 300px;
+  height: 400px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+  border: 1px solid var(--second);
+}
+.kartu:before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, var(--second), var(--white));
+  transform: rotate(-45deg);
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+.kartu:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+.kartu:hover:before {
+  top: 0;
+  left: 0;
+}
+.kartu-content {
+  padding: 20px;
+  text-align: center;
+}
+.kartu-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+.kartu-description {
+  font-size: 16px;
+  color: #777;
+  margin-bottom: 20px;
+}
+.kartu-button {
+  padding: 10px 20px;
+  background-color: var(--second);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+.kartu-button:hover {
+  background-color: var(--white);
+  color: var(--second);
+}

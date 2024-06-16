@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{layouts/main.html}"
+>
+  <head>
+    <title th:text="${title}"></title>
+  </head>
+  <body>
+    <!-- content -->
+    <section class="container-fluid p-3 wrapper" layout:fragment="content">
+      <div class="container">
+        <h3>Halo, <span th:text="${username}"></span></h3>
+        <p>
+          Anda memiliki kendali penuh atas partisipasi Anda dalam membangun desa
+          kita bersama-sama. Lihat ringkasan pengaduan, pantau statusnya, dan
+          berinteraksi dengan komunitas. Ini adalah tempat di mana suara Anda
+          menjadi nyata.
+        </p>
+
+        <div
+          class="wrap-tombol-user d-flex gap-3 justify-content-center p-4 flex-wrap"
+        >
+          <div class="kartu">
+            <div class="kartu-content">
+              <div class="kartu-title">Ajukan Pengaduan</div>
+              <p class="kartu-description">Buat dan ajukan pengaduan Anda</p>
+              <a th:href="@{/tambah-complaint}" class="kartu-button">Buat</a>
+            </div>
+          </div>
+          <div class="kartu">
+            <div class="kartu-content">
+              <div class="kartu-title">Data Pengaduan</div>
+              <p class="kartu-description">
+                Lihat data pengaduan yang telah Anda buat
+              </p>
+              <a th:href="@{/user-complaint}" class="kartu-button">Lihat</a>
+            </div>
+          </div>
+          <div class="kartu">
+            <div class="kartu-content">
+              <div class="kartu-title">Data Follow Up</div>
+              <p class="kartu-description">
+                Lihat hasil follow up dari petugas
+              </p>
+              <a th:href="@{/user-history}" class="kartu-button">Lihat</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <div layout:fragment="js">
+      <script th:src="@{/js/users/complaint.js}"></script>
+  </div> -->
+  </body>
+</html>

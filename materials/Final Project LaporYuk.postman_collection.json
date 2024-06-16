@@ -1,0 +1,629 @@
+{
+	"info": {
+		"_postman_id": "20b2551d-296b-46f7-bb09-edf9a4a584f6",
+		"name": "Final Project LaporYuk",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "23041654",
+		"_collection_link": "https://www.postman.com/avionics-operator-67280296/workspace/laporyuk-sibkm/collection/23041654-20b2551d-296b-46f7-bb09-edf9a4a584f6?action=share&source=collection_link&creator=23041654"
+	},
+	"item": [
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Get All Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9900/category"
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Id Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9900/category/3"
+					},
+					"response": []
+				},
+				{
+					"name": "Search Category Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9900/category/search?name=as",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9900",
+							"path": [
+								"category",
+								"search"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "as"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Category",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:9900/category/6"
+					},
+					"response": []
+				},
+				{
+					"name": "Add a Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Keagamaan dan Budaya\",\r\n    \"description\": \"Laporkan masalah atau berikan saran terkait keagamaan dan budaya di komunitas kita. Apakah Anda memiliki saran untuk meningkatkan toleransi antaragama, atau apakah Anda ingin melaporkan masalah terkait dengan fasilitas keagamaan? Suara Anda sangat berarti dalam membangun lingkungan yang inklusif dan beragam.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9900/category"
+					},
+					"response": []
+				},
+				{
+					"name": "Edit a Category",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Keamanans\",\r\n    \"description\": \"Pengaduan terkait masalah keamanan\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9900/category/6"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Status",
+			"item": [
+				{
+					"name": "Get All Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9900/status"
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Id Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9900/status/2"
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Name Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9900/status/find?name=terkirim",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9900",
+							"path": [
+								"status",
+								"find"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "terkirim"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Status",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:9900/status/6"
+					},
+					"response": []
+				},
+				{
+					"name": "Add a Status",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"terkirim\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9900/status/"
+					},
+					"response": []
+				},
+				{
+					"name": "Edit a Status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Diteruskanlah\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9900/status/6"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Role",
+			"item": [
+				{
+					"name": "Get All Roles",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9900/role"
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Id Role",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9900/role/4"
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Name Role",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9900/role/find?name=user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9900",
+							"path": [
+								"role",
+								"find"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "user"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Role",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:9900/role/4"
+					},
+					"response": []
+				},
+				{
+					"name": "Create a Role",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"testing\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9900/role"
+					},
+					"response": []
+				},
+				{
+					"name": "Edit a Role",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"cobain\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9900/role/4"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "People",
+			"item": [
+				{
+					"name": "Get All People",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9900/people"
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Id People",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9900/people/5"
+					},
+					"response": []
+				},
+				{
+					"name": "Get People By Username",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9900/people/5"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a People",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:9900/people/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Edit a People",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nik\": \"3240220102220001\",\r\n    \"name\": \"Deni Chandra\",\r\n    \"email\": \"deni@star.com\",\r\n    \"address\": \"Jakarta Selatan\",\r\n    \"phone\": \"6282190116205\",\r\n    \"job\": \"Software Engineer\",\r\n    \"profile_picture\": \"https://i.imgur.com/vWBvxuh.png\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9900/people/5"
+					},
+					"response": []
+				},
+				{
+					"name": "Get People By Role Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9900/people/by-role/officer"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Complaint",
+			"item": [
+				{
+					"name": "Get All Complaint",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9900/complaint"
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Id Complaint",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9900/complaint/2"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Complaint By User Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9900/complaint/2"
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Status Complaint Belum Selesai",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9900/complaint/active"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Complaint",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:9900/complaint/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Add a Complaint",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Perizinan Usaha Lambat\",\r\n    \"body\": \"Proses perizinan usaha di kota ini sangat lambat dan menghambat perkembangan bisnis lokal. Harap diberikan perhatian lebih untuk mempercepat proses ini.\",\r\n    \"attachment\": \"\",\r\n    \"date\": \"2023-12-08\",\r\n    \"categoryId\": 9,\r\n    \"peopleId\": 7\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9900/complaint"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Follow Up",
+			"item": [
+				{
+					"name": "Get All Follow Up",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9900/followUp"
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Id Follow Up",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9900/followUp/2"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Follow Up",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:9900/followUp/2"
+					},
+					"response": []
+				},
+				{
+					"name": "Add a Follow Up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"followUpDate\": \"2023-12-01\",\r\n    \"followUpNotes\": \"Pemeliharaan lampu jalan telah dijadwalkan untuk 2 hari kedepan.\",\r\n    \"complaintId\": 1,\r\n    \"officerId\": 2,\r\n    \"statusId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9900/followUp"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get All User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9900/user"
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Id User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9900/user/2"
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Id By Username",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9900/user/find-id/indri"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:9900/user"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "History",
+			"item": [
+				{
+					"name": "Get All Histories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9900/history"
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Id History",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9900/history/2"
+					},
+					"response": []
+				},
+				{
+					"name": "Get History By User Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9900/history/2"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a History",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:9900/history/3"
+					},
+					"response": []
+				},
+				{
+					"name": "Add a History",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"notes\": \"Eksekusi perbaikan sedang berjalan, kemungkinan selesai 2 - 3 hari\",\r\n    \"complaintId\": 2,\r\n    \"statusId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9900/history"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Registration",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nik\": \"3240220102220028\",\r\n    \"name\": \"User Coba\",\r\n    \"email\": \"coba@star.com\",\r\n    \"address\": \"Jakarta Selatan\",\r\n    \"phone\": \"6282190116553\",\r\n    \"job\": \"Kelinci Percobaan\",\r\n    \"profile_picture\": \"\",\r\n    \"username\": \"coba\",\r\n    \"password\": \"coba\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9900/registration"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"mifta@star.com\",\r\n    \"password\": \"mifta\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9900/login"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

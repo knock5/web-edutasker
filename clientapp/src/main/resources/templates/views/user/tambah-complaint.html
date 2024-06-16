@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{layouts/main.html}"
+>
+  <head>
+    <title th:text="${title}"></title>
+  </head>
+  <body>
+    <!-- content -->
+    <section class="container-fluid p-3 wrapper" layout:fragment="content">
+      <div class="container">
+        <div
+          class="d-flex justify-content-between align-items-center flex-wrap gap-3"
+        >
+          <a th:href="@{/u-dashboard}" class="btn btn-warning">Kembali</a>
+          <h1>Buat Pengaduan</h1>
+        </div>
+        <div class="p-3">
+          <form>
+            <div class="row mt-2 mb-3">
+              <input
+                type="text"
+                aria-label="Sizing example input"
+                aria-describedby="people-complaint"
+                id="people-complaint"
+                class="form-control border border-dark-subtle"
+                th:value="${userId}"
+                hidden
+                required
+              />
+            </div>
+            <div class="row mt-2 mb-3">
+              <div class="col-md-3">
+                <span
+                  class="input-group-text fw-bold bg-dark-subtle"
+                  id="kategori"
+                  >Pilih Kategori</span
+                >
+              </div>
+              <div class="col-md-9">
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  aria-describedby="kategori"
+                  id="kategori-complaint"
+                  required
+                >
+                  <option value="" selected hidden>Pilih Kategori</option>
+                </select>
+              </div>
+            </div>
+            <div class="row mt-2 mb-3">
+              <div class="col-md-3">
+                <span
+                  class="input-group-text fw-bold bg-dark-subtle px-2"
+                  id="title"
+                  >Judul Pengaduan</span
+                >
+              </div>
+              <div class="col-md-9">
+                <input
+                  type="text"
+                  aria-label="Sizing example input"
+                  aria-describedby="title"
+                  id="title-complaint"
+                  class="form-control border border-dark-subtle"
+                  required
+                />
+              </div>
+            </div>
+            <div class="mt-2 mb-3">
+              <span class="input-group-text fw-bold bg-dark-subtle"
+                >Tulis Laporan</span
+              >
+              <textarea
+                class="form-control border border-dark-subtle"
+                rows="4"
+                id="laporan"
+                placeholder="Tulis laporan disini.."
+              >
+              </textarea>
+            </div>
+            <div class="row">
+              <div class="col">
+                <span
+                  class="input-group-text fw-bold bg-dark-subtle border"
+                  id="bukti"
+                  >Bukti</span
+                >
+                <input
+                  type="text"
+                  aria-label="Sizing example input"
+                  aria-describedby="bukti"
+                  id="bukti-complaint"
+                  class="form-control border border-dark-subtle"
+                  placeholder="Bagikan link dokumen pendukung..."
+                  required
+                />
+              </div>
+            </div>
+            <div class="py-3">
+              <button
+                id="create-complaint"
+                type="submit"
+                class="btn btn-success"
+              >
+                Kirim
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Tambahkan event listener pada ikon kalender
+      document
+        .getElementById("tanggal-icon")
+        .addEventListener("click", function () {
+          // Di sini, Anda dapat menambahkan logika untuk menampilkan datepicker atau melakukan aksi lainnya
+          $("#datepicker").datepicker("show"); // Contoh untuk datepicker Bootstrap
+        });
+    </script>
+
+    <div layout:fragment="js">
+      <script th:src="@{/js/users/complaint.js}"></script>
+    </div>
+  </body>
+</html>

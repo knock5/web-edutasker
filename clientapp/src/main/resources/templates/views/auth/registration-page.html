@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- local CSS -->
+    <link rel="stylesheet" th:href="@{/css/regis.css}" />
+
+    <link rel="shortcut icon" th:href="@{/img/logo.jpg}" type="image/x-icon" />
+
+    <title th:text="${title}"></title>
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <div class="wrap-regis">
+          <form
+            class="form"
+            th:action="@{/registration}"
+            th:method="POST"
+            th:object="${peopleRequest}"
+          >
+            <p class="title">Registrasi</p>
+            <p class="message">Daftar sekarang dan dapatkan akses aplikasi.</p>
+            <label>
+              <input
+                class="input"
+                type="text"
+                th:field="*{nik}"
+                placeholder=""
+                required
+              />
+              <span>NIK</span>
+            </label>
+
+            <label>
+              <input
+                class="input"
+                type="text"
+                th:field="*{name}"
+                placeholder=""
+                required
+              />
+              <span>Nama Lengkap</span>
+            </label>
+
+            <label>
+              <input
+                class="input"
+                type="email"
+                th:field="*{email}"
+                placeholder=""
+                required
+              />
+              <span>Email</span>
+            </label>
+
+            <label>
+              <input
+                class="input"
+                type="text"
+                th:field="*{address}"
+                placeholder=""
+                required
+              />
+              <span>Alamat</span>
+            </label>
+
+            <label>
+              <input
+                class="input"
+                type="text"
+                th:field="*{phone}"
+                placeholder=""
+                required
+              />
+              <span>Telepon</span>
+            </label>
+
+            <label>
+              <input
+                class="input"
+                type="text"
+                th:field="*{job}"
+                placeholder=""
+                required
+              />
+              <span>Pekerjaan</span>
+            </label>
+
+            <label>
+              <input
+                class="input"
+                type="text"
+                th:field="*{profile_picture}"
+                placeholder=""
+                required
+              />
+              <span>Link Foto Profil</span>
+            </label>
+
+            <label>
+              <input
+                class="input"
+                type="text"
+                th:field="*{username}"
+                placeholder=""
+                required
+              />
+              <span>Username Akun</span>
+            </label>
+
+            <label>
+              <input
+                class="input"
+                type="password"
+                th:field="*{password}"
+                placeholder=""
+                required
+              />
+              <span>Password Akun</span>
+            </label>
+            <button class="submit">Daftar</button>
+            <p class="signin">
+              Sudah punya akun ? <a th:href="@{/signin}">Masuk</a>
+            </p>
+          </form>
+
+          <!-- animation wave -->
+          <div class="mb-0">
+            <svg
+              class="waves"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 24 150 28"
+              preserveAspectRatio="none"
+              shape-rendering="auto"
+            >
+              <defs>
+                <path
+                  id="gentle-wave"
+                  d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v35h-352z"
+                />
+              </defs>
+              <g class="parallax">
+                <use
+                  xlink:href="#gentle-wave"
+                  x="48"
+                  y="0"
+                  fill="rgba(255,255,255,0.7"
+                />
+                <use
+                  xlink:href="#gentle-wave"
+                  x="48"
+                  y="3"
+                  fill="rgba(255,255,255,0.5)"
+                />
+                <use
+                  xlink:href="#gentle-wave"
+                  x="48"
+                  y="5"
+                  fill="rgba(255,255,255,0.3)"
+                />
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

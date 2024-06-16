@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{layouts/main.html}"
+>
+  <head>
+    <title th:text="${title}"></title>
+  </head>
+  <body>
+    <!-- content -->
+    <section class="container-fluid p-3 wrapper" layout:fragment="content">
+      <div class="container">
+        <div
+          class="d-flex justify-content-between align-items-center flex-wrap gap-3"
+        >
+          <a th:href="@{/o-dashboard}" class="btn btn-warning">Kembali</a>
+          <h1>Data Pengaduan</h1>
+          <a th:href="@{/fu-complaint}" class="btn btn-success"
+            ><i class="bi bi-send-check"></i> Buat Tanggapan</a
+          >
+        </div>
+      </div>
+
+      <div class="container py-4">
+        <table
+          id="tableComplaint"
+          class="table table-bordered table-striped table-hover"
+        >
+          <thead>
+            <tr class="table-dark">
+              <th class="col-1 text-center">No</th>
+              <th class="col-1 text-center">ID</th>
+              <th class="col-1 text-center">Tanggal</th>
+              <th class="col-1 text-center">Judul Pengaduan</th>
+              <th class="col-4 text-center">Isi Pengaduan</th>
+              <th class="col-1 text-center">Kategori</th>
+              <th class="col-1 text-center">Status</th>
+              <th class="col-2 text-center">Aksi</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+
+      <!-- Modal Detail Pengaduan -->
+      <div
+        class="modal fade"
+        id="detailComplaintModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Detail Pengaduan
+              </h1>
+            </div>
+            <div class="modal-body">
+              <div class="my-3">
+                <table class="table table-bordered table-warning">
+                  <tbody>
+                    <tr>
+                      <th class="col-4 table-info">ID Pengaduan</th>
+                      <td class="col-8" id="complaintIdDetail"></td>
+                    </tr>
+                    <tr>
+                      <th class="col-4 table-info">Tanggal</th>
+                      <td class="col-8" id="complaintDateDetail"></td>
+                    </tr>
+                    <tr>
+                      <th class="col-4 table-info">Judul Pengaduan</th>
+                      <td class="col-8" id="complaintTitleDetail"></td>
+                    </tr>
+                    <tr>
+                      <th class="col-4 table-info">Lampiran</th>
+                      <td class="col-8">
+                        <a
+                          href=""
+                          target="_blank"
+                          id="complaintAttachmentDetail"
+                          >Link lampiran</a
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="col-4 table-info">Isi Pengaduan</th>
+                      <td class="col-8" id="complaintBodyDetail"></td>
+                    </tr>
+                    <tr>
+                      <th class="col-4 table-info">Status</th>
+                      <td class="col-8">
+                        <span id="complaintStatusDetail" class="badge"></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="col-4 table-info">Kategori</th>
+                      <td class="col-8" id="complaintCategoryDetail"></td>
+                    </tr>
+                    <tr>
+                      <th class="col-4 table-success">Nama Pengirim</th>
+                      <td class="col-8" id="namePeopleDetail"></td>
+                    </tr>
+                    <tr>
+                      <th class="col-4 table-success">NIK</th>
+                      <td class="col-8" id="nikPeopleDetail"></td>
+                    </tr>
+                    <tr>
+                      <th class="col-4 table-success">Email</th>
+                      <td class="col-8" id="emailPeopleDetail"></td>
+                    </tr>
+                    <tr>
+                      <th class="col-4 table-success">Telepon</th>
+                      <td class="col-8" id="phonePeopleDetail"></td>
+                    </tr>
+                    <tr>
+                      <th class="col-4 table-success">Alamat Pengirim</th>
+                      <td class="col-8" id="addressPeopleDetail"></td>
+                    </tr>
+                    <tr>
+                      <th class="col-4 table-success">Pekerjaan</th>
+                      <td class="col-8" id="jobPeopleDetail"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-warning"
+                data-bs-dismiss="modal"
+              >
+                Tutup
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal delete -->
+      <div
+        class="modal fade"
+        id="deleteComplaintModal"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1
+                class="modal-title fs-3 fw-bold m-auto"
+                id="staticBackdropLabel"
+              >
+                Informasi
+              </h1>
+            </div>
+            <form>
+              <div class="modal-body">
+                <div class="my-3 d-flex justify-content-center">
+                  <input type="text" id="delete-id" hidden />
+                  <h4 class="fs-6 fw-bold">
+                    Apakah Anda yakin ingin menghapus pengaduan ini?
+                  </h4>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-bs-dismiss="modal"
+                >
+                  Batal
+                </button>
+                <button
+                  type="submit"
+                  id="delete-complaint"
+                  class="btn btn-outline-danger fw-bold"
+                >
+                  Iya, Hapus!
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div layout:fragment="js">
+      <script th:src="@{/js/officers/dataPengaduan.js}"></script>
+    </div>
+  </body>
+</html>

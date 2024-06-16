@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{layouts/main.html}"
+>
+  <head>
+    <title th:text="${title}"></title>
+  </head>
+  <body>
+    <!-- content -->
+    <section class="container-fluid p-3 wrapper" layout:fragment="content">
+      <div class="container">
+        <p>
+          Di sini, Anda akan menemukan beragam kategori yang mencakup segala
+          aspek kehidupan di desa kita. LaporYuk memberikan kemudahan bagi Anda
+          untuk menjelajahi dan memberikan kontribusi dalam berbagai topik yang
+          relevan. Temukan kategori-kategori menarik, berpartisipasi dalam
+          diskusi, dan berikan suara Anda untuk membentuk arah pembangunan desa.
+        </p>
+
+        <p>
+          Setiap kategori memiliki ruangnya sendiri untuk membagikan ide,
+          memberikan masukan, dan melaporkan hal-hal yang membutuhkan perhatian
+          bersama. Mari bergabung dalam menjadikan desa kita lebih baik, dengan
+          berbagi pengetahuan, menginspirasi perubahan, dan membangun kesadaran
+          atas isu-isu penting.
+        </p>
+
+        <p>
+          Jangan ragu untuk menjelajahi kategori favorit Anda, berinteraksi
+          dengan warga desa lainnya, dan menjadi bagian dari diskusi yang
+          membentuk masa depan bersama. LaporYuk bukan hanya platform, tetapi
+          komunitas di mana setiap suara dihargai dan memiliki dampak nyata. Ayo
+          bersama-sama membuat desa kita berkembang dengan cara yang positif!
+        </p>
+      </div>
+
+      <div class="container">
+        <h3>List Kategori :</h3>
+      </div>
+
+      <div class="container wrap-category">
+        <div class="accordion accordion-flush" id="accordionFlushExample"></div>
+      </div>
+    </section>
+
+    <div layout:fragment="js">
+      <script th:src="@{/js/category.js}"></script>
+    </div>
+  </body>
+</html>

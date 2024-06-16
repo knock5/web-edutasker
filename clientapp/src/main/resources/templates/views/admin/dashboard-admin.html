@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{layouts/main.html}"
+>
+  <head>
+    <title th:text="${title}"></title>
+  </head>
+  <body>
+    <!-- content -->
+    <section class="container-fluid p-3 wrapper" layout:fragment="content">
+      <div class="container">
+        <div class="wrap-menu-dash">
+          <div
+            class="head-menu p-2 d-flex justify-content-between align-items-center"
+          >
+            <h3>Kelola Data</h3>
+
+            <div class="hiding" id="divCreateRole">
+              <button
+                type="button"
+                class="btn btn-success"
+                data-bs-toggle="modal"
+                data-bs-target="#createRole"
+              >
+                Tambah Role
+                <i class="bi bi-plus-circle"></i>
+              </button>
+            </div>
+          </div>
+          <div class="menu-dash d-flex flex-wrap gap-3 p-3 mb-3">
+            <div>
+              <a href="#dashpeople" id="linkPeople" class="dash-link p-1 active"
+                >List Data Pengguna</a
+              >
+            </div>
+            <div>
+              <a href="#dashrole" id="linkRole" class="dash-link p-1"
+                >List Data Role</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-content my-4">
+          <div id="user">
+            <table
+              id="tablePeople"
+              class="table table-bordered table-striped table-hover"
+            >
+              <thead>
+                <tr class="table-dark">
+                  <th class="col-1 text-center">No</th>
+                  <th class="col-2 text-center">Nama</th>
+                  <th class="col-2 text-center">Email</th>
+                  <th class="col-1 text-center">Pekerjaan</th>
+                  <th class="col-2 text-center">Alamat</th>
+                  <th class="col-1 text-center">Role</th>
+                  <th class="col-3 text-center">Aksi</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+
+          <div class="hiding" id="role">
+            <table
+              id="tableRole"
+              class="display table table-bordered table-striped table-hover"
+              style="width: 100%"
+            >
+              <thead>
+                <tr class="table-dark">
+                  <th class="col-1 text-center">No</th>
+                  <th class="col-3 text-center">ID Role</th>
+                  <th class="col-3 text-center">Nama Role</th>
+                  <th class="col-5 text-center">Aksi</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Detail People -->
+      <div
+        class="modal fade"
+        id="detailPeopleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Detail Pengguna
+              </h1>
+            </div>
+            <div class="modal-body">
+              <div class="my-3">
+                <table class="table table-bordered table-warning">
+                  <tbody>
+                    <tr>
+                      <th class="col-4 table-info">ID Pengguna</th>
+                      <td class="col-8" id="userIdDetail"></td>
+                    </tr>
+                    <tr>
+                      <th class="col-4 table-info">NIK</th>
+                      <td class="col-8" id="userNikDetail"></td>
+                    </tr>
+                    <tr>
+                      <th class="col-4 table-info">Nama Lengkap</th>
+                      <td class="col-8" id="userNameDetail"></td>
+                    </tr>
+                    <tr>
+                      <th class="col-4 table-info">Email</th>
+                      <td class="col-8" id="userEmailDetail"></td>
+                    </tr>
+                    <tr>
+                      <th class="col-4 table-info">Telepon</th>
+                      <td class="col-8" id="userPhoneDetail"></td>
+                    </tr>
+                    <tr>
+                      <th class="col-4 table-info">Pekerjaan</th>
+                      <td class="col-8" id="userJobDetail"></td>
+                    </tr>
+                    <tr>
+                      <th class="col-4 table-info">Alamat</th>
+                      <td class="col-8" id="userAddressDetail"></td>
+                    </tr>
+                    <tr>
+                      <th class="col-4 table-info">Username Akun</th>
+                      <td class="col-8" id="usernameAccDetail"></td>
+                    </tr>
+                    <tr>
+                      <th class="col-4 table-info">Role</th>
+                      <td class="col-8" id="userRoleDetail"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Edit People -->
+      <div
+        class="modal fade"
+        id="updatePeopleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="updateModalLabel">
+                Edit People
+              </h1>
+            </div>
+            <form>
+              <input type="text" id="editId" hidden />
+              <div class="modal-body">
+                <div class="input-group my-2">
+                  <span class="input-group-text bg-warning col-3">NIK</span>
+                  <input
+                    type="text"
+                    class="form-control col-9"
+                    aria-label="Sizing example input"
+                    aria-describedby="editNik"
+                    id="editNik"
+                    required
+                  />
+                </div>
+                <div class="input-group my-2">
+                  <span class="input-group-text bg-warning col-3">Name</span>
+                  <input
+                    type="text"
+                    class="form-control col-9"
+                    aria-label="Sizing example input"
+                    aria-describedby="editNik"
+                    id="editName"
+                    required
+                  />
+                </div>
+                <div class="input-group my-2">
+                  <span class="input-group-text bg-warning col-3">Email</span>
+                  <input
+                    type="text"
+                    class="form-control col-9"
+                    aria-label="Sizing example input"
+                    aria-describedby="u-email"
+                    id="editEmail"
+                    required
+                  />
+                </div>
+                <div class="input-group my-2">
+                  <span class="input-group-text col-3 bg-warning">Address</span>
+                  <input
+                    type="text"
+                    class="form-control col-9"
+                    aria-label="Sizing example input"
+                    aria-describedby="u-address"
+                    id="editAddress"
+                    required
+                  />
+                </div>
+                <div class="input-group my-2">
+                  <span class="input-group-text col-3 bg-warning">Phone</span>
+                  <input
+                    type="text"
+                    class="form-control col-9"
+                    aria-label="Sizing example input"
+                    aria-describedby="u-phone"
+                    id="editPhone"
+                    required
+                  />
+                </div>
+                <div class="input-group my-2">
+                  <span class="input-group-text col-3 bg-warning">Job</span>
+                  <input
+                    type="text"
+                    class="form-control col-9"
+                    aria-label="Sizing example input"
+                    aria-describedby="u-job"
+                    id="editJob"
+                    required
+                  />
+                </div>
+                <div class="input-group my-2">
+                  <span class="input-group-text col-3 bg-warning"
+                    >Profile Picture</span
+                  >
+                  <input
+                    type="text"
+                    class="form-control col-9"
+                    aria-label="Sizing example input"
+                    aria-describedby="u-profilePicture"
+                    id="editProfilePicture"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-outline-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Kembali
+                </button>
+                <button
+                  id="update-people"
+                  type="submit"
+                  class="btn btn-success"
+                >
+                  Simpan
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal create Role -->
+      <div
+        class="modal fade"
+        id="createRole"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="createModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="createModalLabel">
+                Tambah Role
+              </h1>
+            </div>
+            <form>
+              <div class="modal-body">
+                <div class="input-group my-2">
+                  <span class="input-group-text bg-warning">Nama Role</span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    aria-label="Sizing example input"
+                    aria-describedby="name"
+                    name="name"
+                    id="role-name"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-outline-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Batal
+                </button>
+                <button id="create-role" type="submit" class="btn btn-success">
+                  Simpan
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Edit Role -->
+      <div
+        class="modal fade"
+        id="updateRoleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="updateModalLabel">Edit Role</h1>
+            </div>
+            <form>
+              <input type="text" id="editRoleId" hidden />
+              <div class="modal-body">
+                <div class="input-group my-2">
+                  <span class="input-group-text bg-warning">Nama Role</span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    aria-label="Sizing example input"
+                    aria-describedby="editRoleName"
+                    id="editRoleName"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-outline-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Kembali
+                </button>
+                <button id="update-role" type="submit" class="btn btn-success">
+                  Simpan
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div layout:fragment="js">
+      <script th:src="@{/js/dashAdmin.js}"></script>
+    </div>
+  </body>
+</html>

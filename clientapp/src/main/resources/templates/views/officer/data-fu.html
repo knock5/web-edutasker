@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{layouts/main.html}"
+>
+  <head>
+    <title th:text="${title}"></title>
+  </head>
+  <body>
+    <!-- content -->
+    <section class="container-fluid p-3 wrapper" layout:fragment="content">
+      <div class="container">
+        <div
+          class="d-flex justify-content-between align-items-center flex-wrap gap-3"
+        >
+          <a th:href="@{/o-dashboard}" class="btn btn-warning">Kembali</a>
+          <h1>Data Follow Up</h1>
+        </div>
+      </div>
+
+      <div class="container py-4">
+        <table
+          id="tableFollowUp"
+          class="table table-bordered table-striped table-hover"
+        >
+          <thead>
+            <tr class="table-dark">
+              <th class="col-1 text-center">No</th>
+              <th class="col-1 text-center">Tanggal Pengaduan</th>
+              <th class="col-1 text-center">ID Pengaduan</th>
+              <th class="col-2 text-center">Judul Pengaduan</th>
+              <th class="col-4 text-center">Catatan FU</th>
+              <th class="col-1 text-center">Status FU</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </section>
+
+    <div layout:fragment="js">
+      <script th:src="@{/js/officers/dataFollowUp.js}"></script>
+    </div>
+  </body>
+</html>

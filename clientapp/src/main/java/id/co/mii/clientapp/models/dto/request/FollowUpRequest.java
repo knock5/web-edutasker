@@ -15,6 +15,7 @@ public class FollowUpRequest {
   private Date followUpDate;
 
   private String followUpNotes;
+  private String followUpScore;
   private Integer complaintId;
   private Integer officerId;
   private Integer statusId;

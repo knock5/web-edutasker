@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 public class HistoryRequest {
 
   private String notes;
+  private String score;
   private Integer complaintId;
   private Integer statusId;
 }

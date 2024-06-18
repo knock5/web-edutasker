@@ -18,6 +18,5 @@ public class ComplaintRequest {
   @JsonFormat(pattern = "yyyy-MM-dd")
   private Date date;
 
-  private Integer categoryId;
   private Integer peopleId;
 }

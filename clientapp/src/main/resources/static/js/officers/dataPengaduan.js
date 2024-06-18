@@ -16,10 +16,9 @@ $(document).ready(function () {
           return meta.row + 1;
         },
       },
-      { data: "id", className: "text-center" },
       { data: "date", className: "text-center" },
       { data: "title", className: "text-center" },
-      { data: "body" },
+      { data: "body", className: "text-center" },
       {
         data: null,
         className: "text-center",
@@ -77,8 +76,6 @@ const detailComplaint = (id) => {
       $("#namePeopleDetail").text(data.people.name);
       $("#emailPeopleDetail").text(data.people.email);
       $("#phonePeopleDetail").text(data.people.phone);
-      $("#addressPeopleDetail").text(data.people.address);
-      $("#positionPeopleDetail").text(data.people.position);
     },
   });
 };

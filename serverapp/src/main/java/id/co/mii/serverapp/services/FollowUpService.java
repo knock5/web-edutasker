@@ -69,6 +69,7 @@ public class FollowUpService {
 
     History history = modelMapper.map(followUpRequest, History.class);
     history.setNotes(followUpRequest.getFollowUpNotes());
+    history.setScore(followUpRequest.getFollowUpScore());
     history.setComplaint(
       complaintService.getById(followUpRequest.getComplaintId())
     );

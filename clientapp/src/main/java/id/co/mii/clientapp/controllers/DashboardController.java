@@ -19,7 +19,7 @@ public class DashboardController {
       auth.getName().substring(0, 1).toUpperCase() + auth.getName().substring(1)
     );
 
-    model.addAttribute("title", "LaporYuk - Dashboard Admin");
+    model.addAttribute("title", "EduTasker - Dashboard Admin");
     model.addAttribute("isActive", "a-dashboard");
 
     return "views/admin/dashboard-admin";
@@ -35,7 +35,7 @@ public class DashboardController {
       auth.getName().substring(0, 1).toUpperCase() + auth.getName().substring(1)
     );
 
-    model.addAttribute("title", "LaporYuk - Dashboard User");
+    model.addAttribute("title", "EduTasker - Dashboard Mahasiswa");
     model.addAttribute("isActive", "u-dashboard");
 
     return "views/user/dashboard-user";
@@ -51,7 +51,7 @@ public class DashboardController {
       auth.getName().substring(0, 1).toUpperCase() + auth.getName().substring(1)
     );
 
-    model.addAttribute("title", "LaporYuk - Dashboard Officer");
+    model.addAttribute("title", "EduTasker - Dashboard Dosen");
     model.addAttribute("isActive", "o-dashboard");
 
     return "views/officer/dashboard-officer";

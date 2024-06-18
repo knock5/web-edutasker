@@ -29,7 +29,7 @@ public class DataComplaintUserController {
       "username",
       auth.getName().substring(0, 1).toUpperCase() + auth.getName().substring(1)
     );
-    model.addAttribute("title", "LaporYuk - Buat Laporan");
+    model.addAttribute("title", "EduTasker - Buat Laporan");
     model.addAttribute("isActive", "u-dashboard");
 
     return "views/user/tambah-complaint";
@@ -50,7 +50,7 @@ public class DataComplaintUserController {
       "username",
       auth.getName().substring(0, 1).toUpperCase() + auth.getName().substring(1)
     );
-    model.addAttribute("title", "LaporYuk - Laporan Saya");
+    model.addAttribute("title", "EduTasker - Laporan Saya");
     model.addAttribute("isActive", "u-dashboard");
 
     return "views/user/user-complaint";
@@ -71,7 +71,7 @@ public class DataComplaintUserController {
       "username",
       auth.getName().substring(0, 1).toUpperCase() + auth.getName().substring(1)
     );
-    model.addAttribute("title", "LaporYuk - History Saya");
+    model.addAttribute("title", "EduTasker - History Saya");
     model.addAttribute("isActive", "u-dashboard");
 
     return "views/user/user-history";

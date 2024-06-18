@@ -18,11 +18,9 @@ $(document).ready(function () {
           return meta.row + 1;
         },
       },
-      { data: "id", className: "text-center" },
       { data: "date", className: "text-center" },
       { data: "title", className: "text-center" },
       { data: "body" },
-      { data: "category.name", className: "text-center" },
       {
         data: null,
         className: "text-center",
@@ -77,13 +75,8 @@ const detailComplaint = (id) => {
       $("#complaintBodyDetail").text(data.body);
       $("#complaintStatusDetail").text(data.status.name);
       $("#complaintStatusDetail").addClass(data.status.name);
-      $("#complaintCategoryDetail").text(data.category.name);
       $("#namePeopleDetail").text(data.people.name);
-      $("#nikPeopleDetail").text(data.people.nik);
       $("#emailPeopleDetail").text(data.people.email);
-      $("#phonePeopleDetail").text(data.people.phone);
-      $("#addressPeopleDetail").text(data.people.address);
-      $("#jobPeopleDetail").text(data.people.job);
     },
   });
 };

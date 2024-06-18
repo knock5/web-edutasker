@@ -11,6 +11,7 @@ public class History {
 
   private Integer id;
   private String notes;
+  private String score;
   private Complaint complaint;
   private Status status;
 }

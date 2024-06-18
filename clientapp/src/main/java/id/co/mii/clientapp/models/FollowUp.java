@@ -13,6 +13,7 @@ public class FollowUp {
   private Integer id;
   private Date followUpDate;
   private String followUpNotes;
+  private String followUpScore;
   private Complaint complaint;
   private User user;
 }

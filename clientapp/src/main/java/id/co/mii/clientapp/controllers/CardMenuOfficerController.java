@@ -23,7 +23,7 @@ public class CardMenuOfficerController {
       "username",
       auth.getName().substring(0, 1).toUpperCase() + auth.getName().substring(1)
     );
-    model.addAttribute("title", "LaporYuk - Data Pengaduan");
+    model.addAttribute("title", "EduTasker - Data Tugas");
     model.addAttribute("isActive", "o-dashboard");
 
     return "views/officer/data-pengaduan";
@@ -44,25 +44,10 @@ public class CardMenuOfficerController {
       "username",
       auth.getName().substring(0, 1).toUpperCase() + auth.getName().substring(1)
     );
-    model.addAttribute("title", "LaporYuk - Data Follow Up");
+    model.addAttribute("title", "EduTasker - Data Follow Up");
     model.addAttribute("isActive", "o-dashboard");
 
     return "views/officer/data-fu";
-  }
-
-  @GetMapping("/data-kategori")
-  public String dataKategoriPage(Model model) {
-    Authentication auth = SecurityContextHolder
-      .getContext()
-      .getAuthentication();
-    model.addAttribute(
-      "username",
-      auth.getName().substring(0, 1).toUpperCase() + auth.getName().substring(1)
-    );
-    model.addAttribute("title", "LaporYuk - Data Kategori");
-    model.addAttribute("isActive", "o-dashboard");
-
-    return "views/officer/data-kategori";
   }
 
   @GetMapping("/data-status")
@@ -74,7 +59,7 @@ public class CardMenuOfficerController {
       "username",
       auth.getName().substring(0, 1).toUpperCase() + auth.getName().substring(1)
     );
-    model.addAttribute("title", "LaporYuk - Data Status");
+    model.addAttribute("title", "EduTasker - Data Status");
     model.addAttribute("isActive", "o-dashboard");
 
     return "views/officer/data-status";
@@ -95,7 +80,7 @@ public class CardMenuOfficerController {
       "username",
       auth.getName().substring(0, 1).toUpperCase() + auth.getName().substring(1)
     );
-    model.addAttribute("title", "LaporYuk - Follow Up Pengaduan");
+    model.addAttribute("title", "EduTasker - Follow Up Tugas");
     model.addAttribute("isActive", "o-dashboard");
 
     return "views/officer/fu-complaint";

@@ -13,7 +13,7 @@
 	<artifactId>clientapp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>clientapp</name>
-	<description>Sistem Laporan Pengaduan Masyarakat - SIBKM Project</description>
+	<description>EduTasker - Final Project</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>

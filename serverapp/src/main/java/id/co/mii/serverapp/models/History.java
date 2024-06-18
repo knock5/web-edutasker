@@ -27,6 +27,8 @@ public class History {
   @Column(length = 100)
   private String notes;
 
+  private String score;
+
   @ManyToOne
   @JoinColumn(name = "complaint_id")
   private Complaint complaint;

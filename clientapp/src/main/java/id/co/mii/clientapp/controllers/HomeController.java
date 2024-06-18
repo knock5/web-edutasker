@@ -18,7 +18,7 @@ public class HomeController {
       "username",
       auth.getName().substring(0, 1).toUpperCase() + auth.getName().substring(1)
     );
-    model.addAttribute("title", "LaporYuk - Home");
+    model.addAttribute("title", "EduTasker - Home");
     model.addAttribute("isActive", "home");
 
     return "views/home";
@@ -33,26 +33,10 @@ public class HomeController {
       "username",
       auth.getName().substring(0, 1).toUpperCase() + auth.getName().substring(1)
     );
-    model.addAttribute("title", "LaporYuk - Home");
+    model.addAttribute("title", "EduTasker - Home");
     model.addAttribute("isActive", "home");
 
     return "views/home";
-  }
-
-  @GetMapping("/h-kategori")
-  public String kategoriHome(Model model) {
-    Authentication auth = SecurityContextHolder
-      .getContext()
-      .getAuthentication();
-    model.addAttribute(
-      "username",
-      auth.getName().substring(0, 1).toUpperCase() + auth.getName().substring(1)
-    );
-
-    model.addAttribute("title", "LaporYuk - Kategori Pengaduan");
-    model.addAttribute("isActive", "h-kategori");
-
-    return "views/kategori-pengaduan";
   }
 
   @GetMapping("/h-tentang")
@@ -65,7 +49,7 @@ public class HomeController {
       auth.getName().substring(0, 1).toUpperCase() + auth.getName().substring(1)
     );
 
-    model.addAttribute("title", "LaporYuk - Tentang");
+    model.addAttribute("title", "EduTasker - Tentang");
     model.addAttribute("isActive", "h-tentang");
 
     return "views/tentang";

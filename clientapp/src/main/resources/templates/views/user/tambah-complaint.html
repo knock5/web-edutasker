@@ -33,29 +33,9 @@
             <div class="row mt-2 mb-3">
               <div class="col-md-3">
                 <span
-                  class="input-group-text fw-bold bg-dark-subtle"
-                  id="kategori"
-                  >Pilih Kategori</span
-                >
-              </div>
-              <div class="col-md-9">
-                <select
-                  class="form-select"
-                  aria-label="Default select example"
-                  aria-describedby="kategori"
-                  id="kategori-complaint"
-                  required
-                >
-                  <option value="" selected hidden>Pilih Kategori</option>
-                </select>
-              </div>
-            </div>
-            <div class="row mt-2 mb-3">
-              <div class="col-md-3">
-                <span
                   class="input-group-text fw-bold bg-dark-subtle px-2"
                   id="title"
-                  >Judul Pengaduan</span
+                  >Judul Tugas *</span
                 >
               </div>
               <div class="col-md-9">
@@ -71,13 +51,14 @@
             </div>
             <div class="mt-2 mb-3">
               <span class="input-group-text fw-bold bg-dark-subtle"
-                >Tulis Laporan</span
+                >Deskripsi Tugas *</span
               >
               <textarea
                 class="form-control border border-dark-subtle"
                 rows="4"
                 id="laporan"
-                placeholder="Tulis laporan disini.."
+                placeholder="Tulis deskripsi disini.."
+                required
               >
               </textarea>
             </div>
@@ -86,7 +67,7 @@
                 <span
                   class="input-group-text fw-bold bg-dark-subtle border"
                   id="bukti"
-                  >Bukti</span
+                  >Lampiran</span
                 >
                 <input
                   type="text"
@@ -94,7 +75,7 @@
                   aria-describedby="bukti"
                   id="bukti-complaint"
                   class="form-control border border-dark-subtle"
-                  placeholder="Bagikan link dokumen pendukung..."
+                  placeholder="Bagikan link dokumen (jika ada)"
                   required
                 />
               </div>

@@ -27,19 +27,17 @@
           <thead>
             <tr class="table-dark">
               <th class="col-1 text-center">No</th>
-              <th class="col-1 text-center">ID</th>
               <th class="col-1 text-center">Tanggal</th>
-              <th class="col-1 text-center">Judul Pengaduan</th>
-              <th class="col-4 text-center">Isi Pengaduan</th>
-              <th class="col-1 text-center">Kategori</th>
+              <th class="col-3 text-center">Judul Tugas</th>
+              <th class="col-4 text-center">Deskripsi</th>
               <th class="col-1 text-center">Status</th>
-              <th class="col-2 text-center">Aksi</th>
+              <th class="col-1 text-center">Aksi</th>
             </tr>
           </thead>
         </table>
       </div>
 
-      <!-- Modal Detail Pengaduan -->
+      <!-- Modal Detail Tugas -->
       <div
         class="modal fade"
         id="detailComplaintModal"
@@ -51,7 +49,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="exampleModalLabel">
-                Detail Pengaduan
+                Detail Pengiriman Tugas
               </h1>
             </div>
             <div class="modal-body">
@@ -59,7 +57,7 @@
                 <table class="table table-bordered table-warning">
                   <tbody>
                     <tr>
-                      <th class="col-4 table-info">ID Pengaduan</th>
+                      <th class="col-4 table-info">ID Pengiriman</th>
                       <td class="col-8" id="complaintIdDetail"></td>
                     </tr>
                     <tr>
@@ -67,7 +65,7 @@
                       <td class="col-8" id="complaintDateDetail"></td>
                     </tr>
                     <tr>
-                      <th class="col-4 table-info">Judul Pengaduan</th>
+                      <th class="col-4 table-info">Judul Tugas</th>
                       <td class="col-8" id="complaintTitleDetail"></td>
                     </tr>
                     <tr>
@@ -82,7 +80,7 @@
                       </td>
                     </tr>
                     <tr>
-                      <th class="col-4 table-info">Isi Pengaduan</th>
+                      <th class="col-4 table-info">Deskripsi</th>
                       <td class="col-8" id="complaintBodyDetail"></td>
                     </tr>
                     <tr>
@@ -92,32 +90,12 @@
                       </td>
                     </tr>
                     <tr>
-                      <th class="col-4 table-info">Kategori</th>
-                      <td class="col-8" id="complaintCategoryDetail"></td>
-                    </tr>
-                    <tr>
                       <th class="col-4 table-success">Nama Pengirim</th>
                       <td class="col-8" id="namePeopleDetail"></td>
                     </tr>
                     <tr>
-                      <th class="col-4 table-success">NIK</th>
-                      <td class="col-8" id="nikPeopleDetail"></td>
-                    </tr>
-                    <tr>
                       <th class="col-4 table-success">Email</th>
                       <td class="col-8" id="emailPeopleDetail"></td>
-                    </tr>
-                    <tr>
-                      <th class="col-4 table-success">Telepon</th>
-                      <td class="col-8" id="phonePeopleDetail"></td>
-                    </tr>
-                    <tr>
-                      <th class="col-4 table-success">Alamat Pengirim</th>
-                      <td class="col-8" id="addressPeopleDetail"></td>
-                    </tr>
-                    <tr>
-                      <th class="col-4 table-success">Pekerjaan</th>
-                      <td class="col-8" id="jobPeopleDetail"></td>
                     </tr>
                   </tbody>
                 </table>

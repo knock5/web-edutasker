@@ -12,10 +12,10 @@
       <div class="container">
         <h3>Halo, <span th:text="${username}"></span></h3>
         <p>
-          Anda memiliki kendali penuh atas partisipasi Anda dalam membangun desa
-          kita bersama-sama. Lihat ringkasan pengaduan, pantau statusnya, dan
-          berinteraksi dengan komunitas. Ini adalah tempat di mana suara Anda
-          menjadi nyata.
+          Anda memiliki kendali penuh atas partisipasi Anda dalam kegiatan
+          pembelajaran. Jadilah mahasiswa yang berprestasi dan berakhlak baik
+          karena Indonesia membutuhkan generasi muda yang seperti itu. Kerjakan
+          tugasmu dan tetap melangkah demi menggapai tujuanmu!
         </p>
 
         <div
@@ -23,25 +23,27 @@
         >
           <div class="kartu">
             <div class="kartu-content">
-              <div class="kartu-title">Ajukan Pengaduan</div>
-              <p class="kartu-description">Buat dan ajukan pengaduan Anda</p>
+              <div class="kartu-title">Kirim Hasil Tugas</div>
+              <p class="kartu-description">
+                Buat dan kirim hasil pengerjaan tugas Anda
+              </p>
               <a th:href="@{/tambah-complaint}" class="kartu-button">Buat</a>
             </div>
           </div>
           <div class="kartu">
             <div class="kartu-content">
-              <div class="kartu-title">Data Pengaduan</div>
+              <div class="kartu-title">Data Kirim Tugas</div>
               <p class="kartu-description">
-                Lihat data pengaduan yang telah Anda buat
+                Lihat data tugas yang telah Anda kirimkan
               </p>
               <a th:href="@{/user-complaint}" class="kartu-button">Lihat</a>
             </div>
           </div>
           <div class="kartu">
             <div class="kartu-content">
-              <div class="kartu-title">Data Follow Up</div>
+              <div class="kartu-title">Follow Up Tugas</div>
               <p class="kartu-description">
-                Lihat hasil follow up dari petugas
+                Lihat hasil follow up tugas Anda dari dosen
               </p>
               <a th:href="@{/user-history}" class="kartu-button">Lihat</a>
             </div>

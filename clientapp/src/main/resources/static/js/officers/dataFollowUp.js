@@ -20,6 +20,7 @@ $(document).ready(function () {
       { data: "complaint.id", className: "text-center" },
       { data: "complaint.title", className: "text-center" },
       { data: "notes" },
+      { data: "score" },
       {
         data: null,
         render: (data) => {

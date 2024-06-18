@@ -48,6 +48,7 @@ let getDataPeople = () => {
       },
       { data: "name", className: "text-center" },
       { data: "email", className: "text-center" },
+      { data: "phone", className: "text-center" },
       { data: "address", className: "text-center" },
       {
         data: "user.roles",

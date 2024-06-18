@@ -42,18 +42,6 @@ $(document).ready(function () {
               >
                 <i class="bi bi-info-circle"></i>
               </button>
-              <!-- Button trigger modal delete -->
-              <button
-                type="button"
-                class="btn btn-danger btn-sm"
-                data-bs-toggle="modal"
-                data-bs-target="#deleteComplaintModal"
-                onclick="deleteComplaint(${data.id})"
-                title="delete"
-              >
-                <i class="bi bi-trash"></i>
-              </button>
-            </div>
           `;
         },
       },

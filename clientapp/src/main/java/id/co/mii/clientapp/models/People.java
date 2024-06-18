@@ -11,12 +11,11 @@ import lombok.NoArgsConstructor;
 public class People {
 
   private Integer id;
-  private Long nik;
   private String name;
   private String email;
   private String address;
   private String phone;
-  private String job;
+  private String position;
   private String profile_picture;
   private Role role;
   private List<Complaint> complaint;

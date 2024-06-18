@@ -119,56 +119,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Modal delete -->
-      <div
-        class="modal fade"
-        id="deleteComplaintModal"
-        data-bs-backdrop="static"
-        data-bs-keyboard="false"
-        tabindex="-1"
-        aria-labelledby="staticBackdropLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1
-                class="modal-title fs-3 fw-bold m-auto"
-                id="staticBackdropLabel"
-              >
-                Informasi
-              </h1>
-            </div>
-            <form>
-              <div class="modal-body">
-                <div class="my-3 d-flex justify-content-center">
-                  <input type="text" id="delete-id" hidden />
-                  <h4 class="fs-6 fw-bold">
-                    Apakah Anda yakin ingin menghapus pengaduan ini?
-                  </h4>
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  data-bs-dismiss="modal"
-                >
-                  Batal
-                </button>
-                <button
-                  type="submit"
-                  id="delete-complaint"
-                  class="btn btn-outline-danger fw-bold"
-                >
-                  Iya, Hapus!
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
     </section>
 
     <div layout:fragment="js">

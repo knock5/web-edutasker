@@ -43,6 +43,7 @@ $("#createFollowUp").click(function (event) {
   // current date
   const date = new Date().toISOString().substring(0, 10);
   const note = $("#fuNotes").val();
+  const score = $("#fuScore").val();
   const complaintId = $("#fuComplaintId").val();
   const officerId = $("#fuOfficerId").val();
   const statusId = $("#fuStatusId").val();
@@ -56,6 +57,7 @@ $("#createFollowUp").click(function (event) {
     data: JSON.stringify({
       followUpDate: date,
       followUpNotes: note,
+      followUpScore: score,
       complaintId: complaintId,
       officerId: officerId,
       statusId: statusId,

@@ -51,4 +51,9 @@ public class RestComplaintController {
   public List<Complaint> findByPeopleId(@PathVariable Integer id) {
     return complaintService.getComplaintByUserId(id);
   }
+
+  @GetMapping("/dosenId/{id}")
+  public List<Complaint> getTaskByDosenId(@PathVariable Integer id) {
+    return complaintService.getTaskByDosenId(id);
+  }
 }

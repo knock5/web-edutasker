@@ -53,4 +53,10 @@ public class ComplaintController {
   public List<Complaint> getComplaintByUserId(@PathVariable Integer userId) {
     return complaintService.getComplaintByUserId(userId);
   }
+
+  // get task list by dosen id
+  @GetMapping("/dosenId/{id}")
+  public List<Complaint> getTaskByDosenId(@PathVariable Integer id) {
+    return complaintService.getTaskByDosenId(id);
+  }
 }

@@ -14,7 +14,7 @@
           class="d-flex justify-content-between align-items-center flex-wrap gap-3"
         >
           <a th:href="@{/u-dashboard}" class="btn btn-warning">Kembali</a>
-          <h1>Pengaduan Saya</h1>
+          <h1>Pengiriman Tugas Saya</h1>
         </div>
       </div>
 
@@ -28,9 +28,9 @@
             <tr class="table-dark">
               <th class="col-1 text-center">No</th>
               <th class="col-1 text-center">Tanggal</th>
-              <th class="col-3 text-center">Judul Tugas</th>
-              <th class="col-4 text-center">Deskripsi</th>
+              <th class="col-2 text-center">Judul Tugas</th>
               <th class="col-1 text-center">Status</th>
+              <th class="col-2 text-center">Dosen</th>
               <th class="col-1 text-center">Aksi</th>
             </tr>
           </thead>
@@ -82,6 +82,10 @@
                     <tr>
                       <th class="col-4 table-info">Deskripsi</th>
                       <td class="col-8" id="complaintBodyDetail"></td>
+                    </tr>
+                    <tr>
+                      <th class="col-4 table-info">Dosen</th>
+                      <td class="col-8" id="complaintDosenDetail"></td>
                     </tr>
                     <tr>
                       <th class="col-4 table-info">Status</th>

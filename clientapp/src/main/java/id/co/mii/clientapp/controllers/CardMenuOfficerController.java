@@ -19,6 +19,12 @@ public class CardMenuOfficerController {
     Authentication auth = SecurityContextHolder
       .getContext()
       .getAuthentication();
+
+    // get user id from username
+    String username = auth.getName();
+    Integer userId = userService.findUserIdByUsername(username);
+
+    model.addAttribute("userId", userId);
     model.addAttribute(
       "username",
       auth.getName().substring(0, 1).toUpperCase() + auth.getName().substring(1)

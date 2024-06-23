@@ -15,4 +15,8 @@ public interface ComplaintRepository extends JpaRepository<Complaint, Integer> {
 
   // get all complaint by user id
   public List<Complaint> findByPeopleId(Integer id);
+
+  // Get all complaints by TaskDosen.people.id
+  @Query("SELECT c FROM Complaint c WHERE c.taskDosen.people.id = :peopleId")
+  public List<Complaint> findAllByTaskDosenPeopleId(Integer peopleId);
 }

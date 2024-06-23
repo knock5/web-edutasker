@@ -71,13 +71,18 @@ public class ComplaintService {
     return complaint;
   }
 
-  // get complaint not resolved
+  // get task list not resolved
   public List<Complaint> findAllByStatusName() {
     return complaintRepository.findAllByStatusNameNotSelesai();
   }
 
-  // get all complaint by user id
+  // get all task list by user id
   public List<Complaint> getComplaintByUserId(Integer userId) {
     return complaintRepository.findByPeopleId(userId);
+  }
+
+  // get task list by dosen id
+  public List<Complaint> getTaskByDosenId(Integer id) {
+    return complaintRepository.findAllByTaskDosenPeopleId(id);
   }
 }

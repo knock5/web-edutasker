@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ComplaintRequest {
 
-  private String title;
   private String body;
   private String attachment;
 
@@ -19,4 +18,5 @@ public class ComplaintRequest {
   private Date date;
 
   private Integer peopleId;
+  private Integer taskDosenId;
 }

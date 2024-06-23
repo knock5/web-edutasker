@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/taskdosen")
-@PreAuthorize("hasAnyRole('ADMIN', 'DOSEN')")
+@PreAuthorize("hasAnyRole('ADMIN', 'DOSEN', 'MAHASISWA')")
 public class TaskDosenController {
 
   private TaskDosenService taskDosenService;

@@ -1,34 +1,35 @@
+const urlTaskDosen = "api/taskdosen/active";
+
 $(document).ready(() => {
   $("#title-complaint").val("");
   $("#bukti-complaint").val("");
   $("#laporan").val("");
 
+  getActiveTaskDosen();
+});
+
+const getActiveTaskDosen = () => {
   $.ajax({
-    url: "/api/category",
+    url: urlTaskDosen,
     method: "GET",
-    dataType: "JSON",
     success: (res) => {
-      res.forEach((item) => {
-        $("#kategori-complaint").append(
-          `<option value="${item.id}">${item.name}</option>`
+      res.forEach((task) => {
+        $("#taskDosenId").append(
+          `<option value="${task.id}">${task.id} | ${task.title} (${task.people.name})</option>`
         );
       });
     },
-    error: (err) => {
-      console.log(err);
-    },
   });
-});
+};
 
 $("#create-complaint").click((event) => {
   event.preventDefault();
 
-  const valueTitle = $("#title-complaint").val();
   const valueBody = $("#laporan").val();
   const valueBukti = $("#bukti-complaint").val();
   const valueDate = new Date().toISOString().slice(0, 10);
-  const valueCategory = $("#kategori-complaint").val();
   const valuePeople = $("#people-complaint").val();
+  const valueTaskDosenId = $("#taskDosenId").val();
 
   $.ajax({
     method: "POST",
@@ -37,18 +38,17 @@ $("#create-complaint").click((event) => {
     contentType: "application/json",
     beforeSend: addCSRFToken(),
     data: JSON.stringify({
-      title: valueTitle,
       body: valueBody,
       attachment: valueBukti,
       date: valueDate,
-      categoryId: valueCategory,
       peopleId: valuePeople,
+      taskDosenId: valueTaskDosenId,
     }),
     success: () => {
       Swal.fire({
         position: "center",
         icon: "success",
-        title: "Laporan berhasil di dibuat!",
+        title: "Tugas berhasil dikirimkan",
         showConfirmButton: false,
         timer: 2000,
       });
@@ -56,14 +56,14 @@ $("#create-complaint").click((event) => {
       $("#title-complaint").val("");
       $("#laporan").val("");
       $("#bukti-complaint").val("");
-      $("#kategori-complaint").val("");
       $("#people-complaint").val("");
+      $("#taskDosenId").val("");
     },
     error: () => {
       Swal.fire({
         position: "center",
         icon: "error",
-        title: "Gagal membuat laporan!!",
+        title: "Gagal mengirimkan tugas!",
         showConfirmButton: false,
         timer: 2000,
       });

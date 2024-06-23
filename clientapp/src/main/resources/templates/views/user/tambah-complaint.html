@@ -39,14 +39,13 @@
                 >
               </div>
               <div class="col-md-9">
-                <input
-                  type="text"
-                  aria-label="Sizing example input"
-                  aria-describedby="title"
-                  id="title-complaint"
-                  class="form-control border border-dark-subtle"
-                  required
-                />
+                <select
+                  name="taskDosenId"
+                  class="form-select border border-dark-subtle"
+                  id="taskDosenId"
+                >
+                  <option value="" selected hidden>Pilih Tugas Dosen</option>
+                </select>
               </div>
             </div>
             <div class="mt-2 mb-3">
@@ -93,16 +92,6 @@
         </div>
       </div>
     </section>
-
-    <script>
-      // Tambahkan event listener pada ikon kalender
-      document
-        .getElementById("tanggal-icon")
-        .addEventListener("click", function () {
-          // Di sini, Anda dapat menambahkan logika untuk menampilkan datepicker atau melakukan aksi lainnya
-          $("#datepicker").datepicker("show"); // Contoh untuk datepicker Bootstrap
-        });
-    </script>
 
     <div layout:fragment="js">
       <script th:src="@{/js/users/complaint.js}"></script>

@@ -19,14 +19,17 @@ $(document).ready(function () {
         },
       },
       { data: "date", className: "text-center" },
-      { data: "title", className: "text-center" },
-      { data: "body" },
+      { data: "taskDosen.title", className: "text-center" },
       {
         data: null,
         className: "text-center",
         render: function (data) {
           return `<span class="badge ${data.status.name}">${data.status.name}</span>`;
         },
+      },
+      {
+        data: "taskDosen.people.name",
+        className: "text-center",
       },
       {
         data: null,
@@ -70,9 +73,10 @@ const detailComplaint = (id) => {
     success: (data) => {
       $("#complaintIdDetail").text(data.id);
       $("#complaintDateDetail").text(data.date);
-      $("#complaintTitleDetail").text(data.title);
+      $("#complaintTitleDetail").text(data.taskDosen.title);
       $("#complaintAttachmentDetail").attr("href", data.attachment);
       $("#complaintBodyDetail").text(data.body);
+      $("#complaintDosenDetail").text(data.taskDosen.people.name);
       $("#complaintStatusDetail").text(data.status.name);
       $("#complaintStatusDetail").addClass(data.status.name);
       $("#namePeopleDetail").text(data.people.name);

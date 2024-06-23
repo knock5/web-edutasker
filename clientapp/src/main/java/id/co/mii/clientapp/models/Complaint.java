@@ -12,11 +12,11 @@ import lombok.NoArgsConstructor;
 public class Complaint {
 
   private Integer id;
-  private String title;
   private String body;
   private String attachment;
   private Date date;
   private People people;
+  private TaskDosen taskDosen;
   private Status status;
   private List<FollowUp> followUps;
   private List<History> histories;

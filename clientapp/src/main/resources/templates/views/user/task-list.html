@@ -11,39 +11,34 @@
     <section class="container-fluid p-3 wrapper" layout:fragment="content">
       <div class="container">
         <div
-          class="d-flex justify-content-between align-items-center flex-wrap gap-3"
+          class="d-flex justify-content-center align-items-center flex-wrap gap-3"
         >
-          <a th:href="@{/o-dashboard}" class="btn btn-warning">Kembali</a>
-          <h1>List Tugas Mahasiswa</h1>
-          <a th:href="@{/fu-complaint}" class="btn btn-success"
-            ><i class="bi bi-send-check"></i> Buat Tanggapan</a
-          >
+          <h1>List Semua Tugas</h1>
         </div>
-        <input type="text" id="individuDosenId" th:value="${userId}" hidden />
       </div>
 
       <div class="container py-4">
         <table
-          id="tableComplaint"
+          id="tableTaskList"
           class="table table-bordered table-striped table-hover"
         >
           <thead>
             <tr class="table-dark">
               <th class="col-1 text-center">No</th>
-              <th class="col-1 text-center">Tanggal</th>
-              <th class="col-2 text-center">Judul Tugas</th>
-              <th class="col-1 text-center">Mahasiswa</th>
-              <th class="col-1 text-center">Status</th>
+              <th class="col-3 text-center">Judul Tugas</th>
+              <th class="col-2 text-center">Status Tugas</th>
+              <th class="col-1 text-center">Tanggal Mulai</th>
+              <th class="col-1 text-center">Batas Waktu</th>
               <th class="col-1 text-center">Aksi</th>
             </tr>
           </thead>
         </table>
       </div>
 
-      <!-- Modal Detail Pengaduan -->
+      <!-- Modal Detail Task Dosen -->
       <div
         class="modal fade"
-        id="detailComplaintModal"
+        id="detailTaskDosenModal"
         tabindex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
@@ -52,7 +47,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="exampleModalLabel">
-                Detail Pengiriman Tugas
+                Detail Tugas Dosen
               </h1>
             </div>
             <div class="modal-body">
@@ -60,45 +55,40 @@
                 <table class="table table-bordered table-warning">
                   <tbody>
                     <tr>
-                      <th class="col-4 table-info">ID Pengiriman</th>
-                      <td class="col-8" id="complaintIdDetail"></td>
-                    </tr>
-                    <tr>
-                      <th class="col-4 table-info">Tanggal</th>
-                      <td class="col-8" id="complaintDateDetail"></td>
+                      <th class="col-4 table-info">ID Tugas</th>
+                      <td class="col-8" id="taskDosenIdDetail"></td>
                     </tr>
                     <tr>
                       <th class="col-4 table-info">Judul Tugas</th>
-                      <td class="col-8" id="complaintTitleDetail"></td>
+                      <td class="col-8" id="taskDosenTitleDetail"></td>
+                    </tr>
+                    <tr>
+                      <th class="col-4 table-info">Deskripsi Tugas</th>
+                      <td class="col-8" id="taskDosenDescDetail"></td>
                     </tr>
                     <tr>
                       <th class="col-4 table-info">Lampiran</th>
                       <td class="col-8">
-                        <a
-                          href=""
-                          target="_blank"
-                          id="complaintAttachmentDetail"
+                        <a href="#" id="taskDosenAttachmentDetail"
                           >Link lampiran</a
                         >
                       </td>
                     </tr>
                     <tr>
-                      <th class="col-4 table-info">Deskripsi</th>
-                      <td class="col-8" id="complaintBodyDetail"></td>
+                      <th class="col-4 table-info">Tanggal Mulai</th>
+                      <td class="col-8" id="taskDosenTMDetail"></td>
                     </tr>
                     <tr>
-                      <th class="col-4 table-info">Status</th>
-                      <td class="col-8">
-                        <span id="complaintStatusDetail" class="badge"></span>
-                      </td>
+                      <th class="col-4 table-info">Batas Waktu</th>
+                      <td class="col-8" id="taskDosenDLDetail"></td>
                     </tr>
                     <tr>
-                      <th class="col-4 table-success">Nama Pengirim</th>
-                      <td class="col-8" id="namePeopleDetail"></td>
+                      <th class="col-4 table-info">Tanggal Dibuat</th>
+                      <td class="col-8" id="taskDosenAddDetail"></td>
                     </tr>
                     <tr>
-                      <th class="col-4 table-success">Email</th>
-                      <td class="col-8" id="emailPeopleDetail"></td>
+                      <th class="col-4 table-success">Dosen</th>
+                      <td class="col-8" id="taskDosenPeople"></td>
                     </tr>
                   </tbody>
                 </table>
@@ -119,7 +109,7 @@
     </section>
 
     <div layout:fragment="js">
-      <script th:src="@{/js/officers/dataPengaduan.js}"></script>
+      <script th:src="@{/js/users/taskList.js}"></script>
     </div>
   </body>
 </html>

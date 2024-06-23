@@ -1,9 +1,11 @@
 const urlPengaduan = "api/complaint";
 
 $(document).ready(function () {
+  const id = $("#individuDosenId").val();
+
   $("#tableComplaint").DataTable({
     ajax: {
-      url: urlPengaduan,
+      url: `${urlPengaduan}/dosenId/${id}`,
       method: "GET",
       dataSrc: "",
     },
@@ -17,8 +19,8 @@ $(document).ready(function () {
         },
       },
       { data: "date", className: "text-center" },
-      { data: "title", className: "text-center" },
-      { data: "body", className: "text-center" },
+      { data: "taskDosen.title", className: "text-center" },
+      { data: "people.name", className: "text-center" },
       {
         data: null,
         className: "text-center",
@@ -56,14 +58,13 @@ const detailComplaint = (id) => {
     success: (data) => {
       $("#complaintIdDetail").text(data.id);
       $("#complaintDateDetail").text(data.date);
-      $("#complaintTitleDetail").text(data.title);
+      $("#complaintTitleDetail").text(data.taskDosen.title);
       $("#complaintAttachmentDetail").attr("href", data.attachment);
       $("#complaintBodyDetail").text(data.body);
       $("#complaintStatusDetail").text(data.status.name);
       $("#complaintStatusDetail").addClass(data.status.name);
       $("#namePeopleDetail").text(data.people.name);
       $("#emailPeopleDetail").text(data.people.email);
-      $("#phonePeopleDetail").text(data.people.phone);
     },
   });
 };

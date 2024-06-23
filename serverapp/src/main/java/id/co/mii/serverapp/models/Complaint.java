@@ -32,9 +32,6 @@ public class Complaint {
   @Column(name = "complaint_id")
   private Integer id;
 
-  @Column(name = "complaint_title", length = 35, nullable = false)
-  private String title;
-
   @Column(name = "complaint_body", length = 225, nullable = false)
   private String body;
 
@@ -52,6 +49,10 @@ public class Complaint {
   @ManyToOne
   @JoinColumn(name = "status_id", nullable = false)
   private Status status;
+
+  @ManyToOne
+  @JoinColumn(name = "task_dosen_id", nullable = false)
+  private TaskDosen taskDosen;
 
   @OneToMany(mappedBy = "complaint", cascade = CascadeType.ALL)
   @JsonIgnore

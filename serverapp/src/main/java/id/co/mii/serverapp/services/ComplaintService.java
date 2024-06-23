@@ -1,8 +1,10 @@
 package id.co.mii.serverapp.services;
 
 import id.co.mii.serverapp.models.Complaint;
+import id.co.mii.serverapp.models.TaskDosen;
 import id.co.mii.serverapp.models.dto.request.ComplaintRequest;
 import id.co.mii.serverapp.repositories.ComplaintRepository;
+import id.co.mii.serverapp.repositories.TaskDosenRepository;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -15,6 +17,7 @@ import org.springframework.web.server.ResponseStatusException;
 public class ComplaintService {
 
   private ComplaintRepository complaintRepository;
+  private TaskDosenService taskDosenService;
   private StatusService statusService;
   private PeopleService peopleService;
   private ModelMapper modelMapper;
@@ -24,16 +27,6 @@ public class ComplaintService {
   }
 
   public Complaint createDTO(ComplaintRequest complaintRequest) {
-    if (
-      complaintRequest.getTitle() == null ||
-      complaintRequest.getTitle().isEmpty()
-    ) {
-      throw new ResponseStatusException(
-        HttpStatus.BAD_REQUEST,
-        "Title tidak boleh kosong"
-      );
-    }
-
     if (
       complaintRequest.getBody() == null || complaintRequest.getBody().isEmpty()
     ) {
@@ -57,6 +50,9 @@ public class ComplaintService {
 
     complaint.setStatus(statusService.findByName("terkirim"));
     complaint.setPeople(peopleService.getById(complaintRequest.getPeopleId()));
+    complaint.setTaskDosen(
+      taskDosenService.getById(complaintRequest.getTaskDosenId())
+    );
 
     return complaintRepository.save(complaint);
   }
@@ -67,12 +63,6 @@ public class ComplaintService {
       .orElseThrow(() ->
         new ResponseStatusException(HttpStatus.NOT_FOUND, "Data Kosong")
       );
-  }
-
-  public Complaint update(Integer id, Complaint complaint) {
-    getById(id);
-    complaint.setId(id);
-    return complaintRepository.save(complaint);
   }
 
   public Complaint delete(Integer id) {

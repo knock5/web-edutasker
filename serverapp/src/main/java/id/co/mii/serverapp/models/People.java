@@ -50,6 +50,10 @@ public class People {
   @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   private List<Complaint> complaint;
 
+  @OneToMany(mappedBy = "people")
+  @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+  private List<TaskDosen> taskDosens;
+
   @OneToOne(mappedBy = "people", cascade = CascadeType.ALL)
   @PrimaryKeyJoinColumn
   private User user;

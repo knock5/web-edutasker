@@ -67,6 +67,15 @@
             <li class="nav-item">
               <a
                 class="nav-link"
+                th:classappend="${isActive == 'task-dosen' ? 'active' : ''}"
+                th:href="@{/task-dosen}"
+                sec:authorize="hasRole('DOSEN')"
+                >Tugas Saya</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
                 th:classappend="${isActive == 'h-tentang' ? 'active' : ''}"
                 th:href="@{/h-tentang}"
                 >Tentang</a

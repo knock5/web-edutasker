@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{layouts/main.html}"
+>
+  <head>
+    <title th:text="${title}"></title>
+  </head>
+  <body>
+    <!-- content -->
+    <section class="container-fluid p-3 wrapper" layout:fragment="content">
+      <div class="container">
+        <div
+          class="d-flex justify-content-between align-items-center flex-wrap gap-3"
+        >
+          <h1>List Tugas Saya</h1>
+          <a th:href="@{/add-taskdosen-page}" class="btn btn-success"
+            >Buat Tugas</a
+          >
+        </div>
+        <input type="text" th:value="${userId}" id="userIdDosen" hidden />
+      </div>
+
+      <div class="container py-4">
+        <table
+          id="tableTaskDosen"
+          class="table table-bordered table-striped table-hover"
+        >
+          <thead>
+            <tr class="table-dark">
+              <th class="col-1 text-center">No</th>
+              <th class="col-3 text-center">Judul Tugas</th>
+              <th class="col-2 text-center">Status Tugas</th>
+              <th class="col-1 text-center">Tanggal Mulai</th>
+              <th class="col-1 text-center">Batas Waktu</th>
+              <th class="col-1 text-center">Aksi</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+
+      <!-- Modal Detail Task Dosen -->
+      <div
+        class="modal fade"
+        id="detailTaskDosenModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Detail Tugas Dosen
+              </h1>
+            </div>
+            <div class="modal-body">
+              <div class="my-3">
+                <table class="table table-bordered table-warning">
+                  <tbody>
+                    <tr>
+                      <th class="col-4 table-info">ID Tugas</th>
+                      <td class="col-8" id="taskDosenIdDetail"></td>
+                    </tr>
+                    <tr>
+                      <th class="col-4 table-info">Judul Tugas</th>
+                      <td class="col-8" id="taskDosenTitleDetail"></td>
+                    </tr>
+                    <tr>
+                      <th class="col-4 table-info">Deskripsi Tugas</th>
+                      <td class="col-8" id="taskDosenDescDetail"></td>
+                    </tr>
+                    <tr>
+                      <th class="col-4 table-info">Lampiran</th>
+                      <td class="col-8">
+                        <a href="#" id="taskDosenAttachmentDetail"
+                          >Link lampiran</a
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="col-4 table-info">Tanggal Mulai</th>
+                      <td class="col-8" id="taskDosenTMDetail"></td>
+                    </tr>
+                    <tr>
+                      <th class="col-4 table-info">Batas Waktu</th>
+                      <td class="col-8" id="taskDosenDLDetail"></td>
+                    </tr>
+                    <tr>
+                      <th class="col-4 table-info">Tanggal Dibuat</th>
+                      <td class="col-8" id="taskDosenAddDetail"></td>
+                    </tr>
+                    <tr>
+                      <th class="col-4 table-success">Status</th>
+                      <td class="col-8" id="taskDosenActiveDetail"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-warning"
+                data-bs-dismiss="modal"
+              >
+                Tutup
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div layout:fragment="js">
+      <script th:src="@{/js/officers/dataTasks.js}"></script>
+    </div>
+  </body>
+</html>

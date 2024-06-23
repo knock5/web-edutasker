@@ -9,14 +9,21 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ComplaintRequest {
+public class TaskDosenRequest {
 
+  private String title;
   private String body;
   private String attachment;
 
   @JsonFormat(pattern = "yyyy-MM-dd")
-  private Date date;
+  private Date startDate;
+
+  @JsonFormat(pattern = "yyyy-MM-dd")
+  private Date dueDate;
+
+  @JsonFormat(pattern = "yyyy-MM-dd")
+  private Date createdAt;
 
   private Integer peopleId;
-  private Integer taskDosenId;
+  private Boolean isActive;
 }

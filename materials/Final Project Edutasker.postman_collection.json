@@ -1,106 +1,11 @@
 {
 	"info": {
-		"_postman_id": "20b2551d-296b-46f7-bb09-edf9a4a584f6",
-		"name": "Final Project LaporYuk",
+		"_postman_id": "03dde023-cbd1-4ba0-9720-2e12cd2d2e06",
+		"name": "Final Project Edutasker",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
-		"_exporter_id": "23041654",
-		"_collection_link": "https://www.postman.com/avionics-operator-67280296/workspace/laporyuk-sibkm/collection/23041654-20b2551d-296b-46f7-bb09-edf9a4a584f6?action=share&source=collection_link&creator=23041654"
+		"_exporter_id": "23041654"
 	},
 	"item": [
-		{
-			"name": "Category",
-			"item": [
-				{
-					"name": "Get All Categories",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "http://localhost:9900/category"
-					},
-					"response": []
-				},
-				{
-					"name": "Get By Id Category",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "http://localhost:9900/category/3"
-					},
-					"response": []
-				},
-				{
-					"name": "Search Category Name",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:9900/category/search?name=as",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9900",
-							"path": [
-								"category",
-								"search"
-							],
-							"query": [
-								{
-									"key": "name",
-									"value": "as"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete a Category",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": "http://localhost:9900/category/6"
-					},
-					"response": []
-				},
-				{
-					"name": "Add a Category",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Keagamaan dan Budaya\",\r\n    \"description\": \"Laporkan masalah atau berikan saran terkait keagamaan dan budaya di komunitas kita. Apakah Anda memiliki saran untuk meningkatkan toleransi antaragama, atau apakah Anda ingin melaporkan masalah terkait dengan fasilitas keagamaan? Suara Anda sangat berarti dalam membangun lingkungan yang inklusif dan beragam.\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "http://localhost:9900/category"
-					},
-					"response": []
-				},
-				{
-					"name": "Edit a Category",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Keamanans\",\r\n    \"description\": \"Pengaduan terkait masalah keamanan\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "http://localhost:9900/category/6"
-					},
-					"response": []
-				}
-			]
-		},
 		{
 			"name": "Status",
 			"item": [
@@ -164,7 +69,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"terkirim\"\r\n}",
+							"raw": "{\r\n    \"name\": \"selesai\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -361,37 +266,58 @@
 			]
 		},
 		{
-			"name": "Complaint",
+			"name": "Task Up",
 			"item": [
 				{
-					"name": "Get All Complaint",
+					"name": "Get All Task Up",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": "http://localhost:9900/complaint"
 					},
 					"response": []
 				},
 				{
-					"name": "Get By Id Complaint",
+					"name": "Get By Id Task Up",
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:9900/complaint/2"
+						"url": "http://localhost:9900/complaint/1"
 					},
 					"response": []
 				},
 				{
-					"name": "Get Complaint By User Id",
+					"name": "Get Task Up By User Id",
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:9900/complaint/2"
+						"url": "http://localhost:9900/complaint/userId/3"
 					},
 					"response": []
 				},
 				{
-					"name": "Get By Status Complaint Belum Selesai",
+					"name": "Get Task Up By Dosen Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9900/complaint/dosenId/5"
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Status Task Up Active",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -400,22 +326,31 @@
 					"response": []
 				},
 				{
-					"name": "Delete a Complaint",
+					"name": "Get By People Id and Status Not Done Task Up",
 					"request": {
-						"method": "DELETE",
+						"method": "GET",
 						"header": [],
-						"url": "http://localhost:9900/complaint/1"
+						"url": "http://localhost:9900/complaint/byPeopleIdAndNotSelesai/5"
 					},
 					"response": []
 				},
 				{
-					"name": "Add a Complaint",
+					"name": "Delete a Task Up",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:9900/complaint/8"
+					},
+					"response": []
+				},
+				{
+					"name": "Add a Task Up",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"Perizinan Usaha Lambat\",\r\n    \"body\": \"Proses perizinan usaha di kota ini sangat lambat dan menghambat perkembangan bisnis lokal. Harap diberikan perhatian lebih untuk mempercepat proses ini.\",\r\n    \"attachment\": \"\",\r\n    \"date\": \"2023-12-08\",\r\n    \"categoryId\": 9,\r\n    \"peopleId\": 7\r\n}",
+							"raw": "{\r\n    \"body\": \"Semua soal sudah terjawab\",\r\n    \"attachment\": \"https://drive.google.com/file/d/1An54C7pVpbT8-b9GYxtsO1UlYzw5neec/view\",\r\n    \"date\": \"2024-06-25\",\r\n    \"peopleId\": 3,\r\n    \"taskDosenId\": 13\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -445,7 +380,16 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:9900/followUp/2"
+						"url": "http://localhost:9900/followUp/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Get By User Id Follow Up",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9900/followUp/byPeople/5"
 					},
 					"response": []
 				},
@@ -465,7 +409,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"followUpDate\": \"2023-12-01\",\r\n    \"followUpNotes\": \"Pemeliharaan lampu jalan telah dijadwalkan untuk 2 hari kedepan.\",\r\n    \"complaintId\": 1,\r\n    \"officerId\": 2,\r\n    \"statusId\": 2\r\n}",
+							"raw": "{\r\n    \"followUpDate\": \"2024-06-25\",\r\n    \"followUpNotes\": \"Masih saya cek\",\r\n    \"followUpScore\": \"\",\r\n    \"complaintId\": 8,\r\n    \"officerId\": 2,\r\n    \"statusId\": 2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -545,7 +489,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:9900/history/2"
+						"url": "http://localhost:9900/history/byPeople/5"
 					},
 					"response": []
 				},
@@ -594,7 +538,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nik\": \"3240220102220028\",\r\n    \"name\": \"User Coba\",\r\n    \"email\": \"coba@star.com\",\r\n    \"address\": \"Jakarta Selatan\",\r\n    \"phone\": \"6282190116553\",\r\n    \"job\": \"Kelinci Percobaan\",\r\n    \"profile_picture\": \"\",\r\n    \"username\": \"coba\",\r\n    \"password\": \"coba\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Siti\",\r\n    \"email\": \"siti@star.com\",\r\n    \"address\": \"Jakarta Selatan\",\r\n    \"phone\": \"6282190556091\",\r\n    \"position\": \"dosen\",\r\n    \"profile_picture\": \"link-profile-picture.png\",\r\n    \"username\": \"siti\",\r\n    \"password\": \"siti\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -612,7 +556,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"mifta@star.com\",\r\n    \"password\": \"mifta\"\r\n}",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -620,6 +564,92 @@
 							}
 						},
 						"url": "http://localhost:9900/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Task Dosen",
+			"item": [
+				{
+					"name": "Get All Task Dosen",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9900/taskdosen"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Active Task Dosen",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9900/taskdosen/active"
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Id Task Dosen",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9900/taskdosen/5"
+					},
+					"response": []
+				},
+				{
+					"name": "Get By People Id Task Dosen",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9900/taskdosen/people/5"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Task Dosen",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:9900/taskdosen/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Add a Task Dosen",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Tugas 3 - Pemrograman Web\",\r\n    \"body\": \"Buatlah website dengan menarik\",\r\n    \"attachment\": \"https://drive.google.com/file/d/1An54C7pVpbT8-b9GYxtsO1UlYzw5neec/view\",\r\n    \"startDate\": \"2024-06-30\",\r\n    \"dueDate\": \"2024-07-21\",\r\n    \"createdAt\": \"2024-06-24\",\r\n    \"isActive\": true,\r\n    \"peopleId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9900/taskdosen"
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Task Dosen",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Tugas 5 - Rekayasa Perangkat Lunak\",\r\n    \"body\": \"Pengerjaan sesuai NIM belakang, soalnya nomor 1 - 15.\",\r\n    \"attachment\": \"tugas5-quiz.pdf\",\r\n    \"startDate\": \"2024-06-24\",\r\n    \"dueDate\": \"2024-07-01\",\r\n    \"createdAt\": \"2024-06-23\",\r\n    \"isActive\": false,\r\n    \"peopleId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9900/taskdosen/2"
 					},
 					"response": []
 				}

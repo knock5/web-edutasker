@@ -8,9 +8,9 @@
 
 ### **`Design & Documentation:`**
 
-- [ERD]()
-- [SQL]()
-- [Desain Interface]()
+- [ERD](https://drive.google.com/file/d/1wAqzag74GAStluQAeCqVjSk86aeCRdYn/view?usp=drive_link)
+- [SQL](https://drive.google.com/file/d/1f3FzU_jXCX4h4XIY_W3gKrDUwiy5U9yy/view?usp=drive_link)
+- [Desain Interface](https://www.figma.com/design/hOxEQu7aefG18wITGOm8x8/Desain-Interface-Project-EduTasker?node-id=0-1&t=14j23tE5Pk9sDNAl-1)
 
 ---
 

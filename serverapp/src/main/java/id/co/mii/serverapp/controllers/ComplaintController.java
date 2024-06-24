@@ -27,6 +27,13 @@ public class ComplaintController {
     return complaintService.getAll();
   }
 
+  @GetMapping("/byPeopleIdAndNotSelesai/{peopleId}")
+  public List<Complaint> getByPeopleIdAndStatusNotSelesai(
+    @PathVariable Integer peopleId
+  ) {
+    return complaintService.getByPeopleIdAndStatusNotSelesai(peopleId);
+  }
+
   @GetMapping("/{id}")
   public Complaint getById(@PathVariable Integer id) {
     return complaintService.getById(id);

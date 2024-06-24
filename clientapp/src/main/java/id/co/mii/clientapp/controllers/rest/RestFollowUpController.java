@@ -30,6 +30,11 @@ public class RestFollowUpController {
     return followUpService.getById(id);
   }
 
+  @GetMapping("/byPeople/{id}")
+  public List<FollowUp> getByUserId(@PathVariable Integer id) {
+    return followUpService.getByUserId(id);
+  }
+
   @PostMapping(consumes = { "application/json" })
   public FollowUp create(@RequestBody FollowUpRequest followUpRequest) {
     return followUpService.create(followUpRequest);

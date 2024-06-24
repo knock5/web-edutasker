@@ -53,4 +53,9 @@ public class FollowUpController {
   public FollowUp delete(@PathVariable Integer id) {
     return followUpService.delete(id);
   }
+
+  @GetMapping("/byPeople/{id}")
+  public List<FollowUp> getByPeopleId(@PathVariable Integer id) {
+    return followUpService.getByPeopleId(id);
+  }
 }

@@ -56,4 +56,11 @@ public class RestComplaintController {
   public List<Complaint> getTaskByDosenId(@PathVariable Integer id) {
     return complaintService.getTaskByDosenId(id);
   }
+
+  @GetMapping("/byPeopleIdAndNotSelesai/{id}")
+  public List<Complaint> getTaskByPeopleIdAndNotSelesai(
+    @PathVariable Integer id
+  ) {
+    return complaintService.getTaskByPeopleIdActiveAndNotSelesai(id);
+  }
 }

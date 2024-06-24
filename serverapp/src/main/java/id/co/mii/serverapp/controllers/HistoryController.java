@@ -54,7 +54,7 @@ public class HistoryController {
   }
 
   // get history by people id
-  @GetMapping("/user/{id}")
+  @GetMapping("/byPeople/{id}")
   public List<History> findByComplaintPeopleId(@PathVariable Integer id) {
     return historyService.getHistoryByPeopleId(id);
   }

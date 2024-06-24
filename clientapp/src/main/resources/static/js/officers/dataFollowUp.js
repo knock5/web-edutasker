@@ -1,9 +1,11 @@
-const urlFU = "api/history";
+const urlHistoryFU = "api/history";
 
 $(document).ready(function () {
+  const peopleId = $("#fuPeopleId").val();
+
   $("#tableFollowUp").DataTable({
     ajax: {
-      url: urlFU,
+      url: `${urlHistoryFU}/byPeople/${peopleId}`,
       method: "GET",
       dataSrc: "",
     },
@@ -18,7 +20,7 @@ $(document).ready(function () {
       },
       { data: "complaint.date", className: "text-center" },
       { data: "complaint.id", className: "text-center" },
-      { data: "complaint.title", className: "text-center" },
+      { data: "complaint.taskDosen.title", className: "text-center" },
       { data: "notes" },
       { data: "score", className: "text-center" },
       {

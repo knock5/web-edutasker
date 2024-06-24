@@ -16,6 +16,8 @@
           <a th:href="@{/o-dashboard}" class="btn btn-warning">Kembali</a>
           <h1>Data Follow Up</h1>
         </div>
+
+        <input type="text" id="fuPeopleId" th:value="${userId}" hidden />
       </div>
 
       <div class="container py-4">
@@ -26,9 +28,9 @@
           <thead>
             <tr class="table-dark">
               <th class="col-1 text-center">No</th>
-              <th class="col-1 text-center">Tanggal Pengaduan</th>
-              <th class="col-1 text-center">ID Pengaduan</th>
-              <th class="col-2 text-center">Judul Pengaduan</th>
+              <th class="col-1 text-center">Tanggal FU</th>
+              <th class="col-1 text-center">ID Tugas</th>
+              <th class="col-2 text-center">Judul Tugas</th>
               <th class="col-3 text-center">Catatan FU</th>
               <th class="col-1 text-center">Nilai</th>
               <th class="col-1 text-center">Status FU</th>

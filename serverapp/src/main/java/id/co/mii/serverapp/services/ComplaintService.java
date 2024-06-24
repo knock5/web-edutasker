@@ -26,6 +26,12 @@ public class ComplaintService {
     return complaintRepository.findAll();
   }
 
+  public List<Complaint> getByPeopleIdAndStatusNotSelesai(Integer peopleId) {
+    return complaintRepository.findByTaskDosenPeopleIdAndIsActiveAndStatusNotSelesai(
+      peopleId
+    );
+  }
+
   public Complaint createDTO(ComplaintRequest complaintRequest) {
     if (
       complaintRequest.getBody() == null || complaintRequest.getBody().isEmpty()

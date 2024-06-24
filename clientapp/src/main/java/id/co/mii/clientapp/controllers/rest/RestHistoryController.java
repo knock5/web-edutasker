@@ -27,7 +27,7 @@ public class RestHistoryController {
   }
 
   // get history by people id
-  @GetMapping("/user/{id}")
+  @GetMapping("/byPeople/{id}")
   public List<History> getHistoryByPeopleId(@PathVariable Integer id) {
     return historyService.getHistoryByPeopleId(id);
   }

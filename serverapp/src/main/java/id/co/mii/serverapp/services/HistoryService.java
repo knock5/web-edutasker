@@ -74,6 +74,6 @@ public class HistoryService {
 
   // get history by people id
   public List<History> getHistoryByPeopleId(Integer id) {
-    return historyRepository.findByComplaintPeopleId(id);
+    return historyRepository.findByTaskDosenPeopleId(id);
   }
 }

@@ -39,7 +39,7 @@ public class HistoryService {
   public List<History> getHistoryByPeopleId(Integer id) {
     return restTemplate
       .exchange(
-        url.concat("/user/" + id),
+        url.concat("/byPeople/" + id),
         HttpMethod.GET,
         null,
         new ParameterizedTypeReference<List<History>>() {}

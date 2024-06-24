@@ -1,4 +1,5 @@
-const urlPengaduan = "api/complaint";
+const urlFollowUp = "api/followUp";
+const urlTaskMhs = "api/complaint/byPeopleIdAndNotSelesai";
 
 $(document).ready(() => {
   $("#fuNotes").val("");
@@ -10,13 +11,16 @@ $(document).ready(() => {
 });
 
 const getActiveComplaint = () => {
+  const id = $("#userIdFU").val();
+
   $.ajax({
-    url: `${urlPengaduan}/active`,
+    url: `${urlTaskMhs}/${id}`,
     method: "GET",
     success: (data) => {
+      console.log(data);
       data.forEach((complaint) => {
         $("#fuComplaintId").append(
-          `<option value="${complaint.id}">${complaint.title} - ${complaint.id}</option>`
+          `<option value="${complaint.id}">${complaint.id} | ${complaint.taskDosen.title} (${complaint.people.name})</option>`
         );
       });
     },
@@ -49,7 +53,7 @@ $("#createFollowUp").click(function (event) {
   const statusId = $("#fuStatusId").val();
 
   $.ajax({
-    url: "api/followUp",
+    url: urlFollowUp,
     method: "POST",
     dataType: "JSON",
     contentType: "application/json",

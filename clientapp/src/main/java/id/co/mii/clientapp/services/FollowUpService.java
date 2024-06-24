@@ -31,6 +31,17 @@ public class FollowUpService {
       .getBody();
   }
 
+  public List<FollowUp> getByUserId(Integer id) {
+    return restTemplate
+      .exchange(
+        url.concat("/byPeople/" + id),
+        HttpMethod.GET,
+        null,
+        new ParameterizedTypeReference<List<FollowUp>>() {}
+      )
+      .getBody();
+  }
+
   public FollowUp getById(Integer id) {
     return restTemplate
       .exchange(url + "/" + id, HttpMethod.GET, null, FollowUp.class)

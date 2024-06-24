@@ -48,6 +48,17 @@ public class ComplaintService {
       .getBody();
   }
 
+  public List<Complaint> getTaskByPeopleIdActiveAndNotSelesai(Integer id) {
+    return restTemplate
+      .exchange(
+        url.concat("/byPeopleIdAndNotSelesai/" + id),
+        HttpMethod.GET,
+        null,
+        new ParameterizedTypeReference<List<Complaint>>() {}
+      )
+      .getBody();
+  }
+
   public Complaint create(ComplaintRequest complaintRequest) {
     return restTemplate
       .exchange(

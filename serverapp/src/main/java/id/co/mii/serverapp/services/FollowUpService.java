@@ -27,7 +27,15 @@ public class FollowUpService {
   private HistoryRepository historyRepository;
 
   public List<FollowUp> getAll() {
-    return followUpRepository.findAll();
+    try {
+      return followUpRepository.findAll();
+    } catch (Exception e) {
+      throw new ResponseStatusException(
+        HttpStatus.INTERNAL_SERVER_ERROR,
+        "Terjadi kesalahan saat mengambil data FollowUp",
+        e
+      );
+    }
   }
 
   public FollowUp createDTO(FollowUpRequest followUpRequest) {
@@ -88,6 +96,10 @@ public class FollowUpService {
           "Data FollowUp tidak ditemukan"
         )
       );
+  }
+
+  public List<FollowUp> getByPeopleId(Integer id) {
+    return followUpRepository.findByUserId(id);
   }
 
   public FollowUp update(Integer id, FollowUp followUp) {

@@ -53,9 +53,14 @@ public class HistoryController {
     return historyService.delete(id);
   }
 
-  // get history by people id
+  // get history by taskDosen people id
   @GetMapping("/byPeople/{id}")
   public List<History> findByComplaintPeopleId(@PathVariable Integer id) {
     return historyService.getHistoryByPeopleId(id);
+  }
+
+  @GetMapping("/byMhsId/{id}")
+  public List<History> getHistoryByMhsId(@PathVariable Integer id) {
+    return historyService.getHistoryByMhsId(id);
   }
 }

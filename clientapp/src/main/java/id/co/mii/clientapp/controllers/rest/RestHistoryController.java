@@ -26,9 +26,15 @@ public class RestHistoryController {
     return historyService.getById(id);
   }
 
-  // get history by people id
+  // get history by taskDosen people id
   @GetMapping("/byPeople/{id}")
   public List<History> getHistoryByPeopleId(@PathVariable Integer id) {
     return historyService.getHistoryByPeopleId(id);
+  }
+
+  // get history by MHS id
+  @GetMapping("/byMhsId/{id}")
+  public List<History> getHistoryByMhsId(@PathVariable Integer id) {
+    return historyService.getHistoryByMhsId(id);
   }
 }

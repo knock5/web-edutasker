@@ -20,20 +20,21 @@ $(document).ready(function () {
         },
       },
       { data: "title", className: "text-center" },
-      {
-        data: "isActive",
-        className: "text-center",
-        render: function (data, type, row) {
-          let status = "";
-          if (data === "true") {
-            status += `<span class="badge bg-success">Aktif</span>`;
-          } else {
-            status += `<span class="badge bg-danger">Tidak Aktif</span>`;
-          }
+      { data: "people.name", className: "text-center" },
+      // {
+      //   data: "isActive",
+      //   className: "text-center",
+      //   render: function (data, type, row) {
+      //     let status = "";
+      //     if (data === "true") {
+      //       status += `<span class="badge bg-success">Aktif</span>`;
+      //     } else {
+      //       status += `<span class="badge bg-danger">Tidak Aktif</span>`;
+      //     }
 
-          return status;
-        },
-      },
+      //     return status;
+      //   },
+      // },
       { data: "startDate", className: "text-center" },
       { data: "dueDate", className: "text-center" },
       {

@@ -35,11 +35,23 @@ public class HistoryService {
       .getBody();
   }
 
-  // get history by people id
+  // get history by taskDosen people id
   public List<History> getHistoryByPeopleId(Integer id) {
     return restTemplate
       .exchange(
         url.concat("/byPeople/" + id),
+        HttpMethod.GET,
+        null,
+        new ParameterizedTypeReference<List<History>>() {}
+      )
+      .getBody();
+  }
+
+  // get history by MHS id
+  public List<History> getHistoryByMhsId(Integer id) {
+    return restTemplate
+      .exchange(
+        url.concat("/byMhsId/" + id),
         HttpMethod.GET,
         null,
         new ParameterizedTypeReference<List<History>>() {}

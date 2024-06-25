@@ -16,4 +16,11 @@ public interface HistoryRepository extends JpaRepository<History, Integer> {
     "WHERE td.people.id = :peopleId"
   )
   List<History> findByTaskDosenPeopleId(@Param("peopleId") Integer peopleId);
+
+  @Query(
+    "SELECT h FROM History h " +
+    "JOIN h.complaint c " +
+    "WHERE c.people.id = :peopleId"
+  )
+  List<History> findByPeopleId(@Param("peopleId") Integer peopleId);
 }

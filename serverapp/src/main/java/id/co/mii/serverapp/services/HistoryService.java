@@ -72,8 +72,13 @@ public class HistoryService {
     return history;
   }
 
-  // get history by people id
+  // get history by people taskDosen id
   public List<History> getHistoryByPeopleId(Integer id) {
     return historyRepository.findByTaskDosenPeopleId(id);
+  }
+
+  // get history by people mhs id
+  public List<History> getHistoryByMhsId(Integer id) {
+    return historyRepository.findByPeopleId(id);
   }
 }
